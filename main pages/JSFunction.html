@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Functions</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Functions</h1>
+
+    <div class="box">
+        <p>A JavaScript function is a block of code designed to perform a particular task.</p>
+        <p>A JavaScript function is executed when "something" invokes it (calls it).</p>
+        <br>
+     
+
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+function myFunction(p1, p2) {
+    return p1 * p2;   // The function returns the product of p1 and p2
+}
+                </pre>
+                <a href="../examples/JSFunction/1.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+        <div class="box">
+            <h2>JavaScript Function Syntax</h2>
+            <p>A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().</p>
+               <p> Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+
+            </p>
+            <p>The parentheses may include parameter names separated by commas:
+                (parameter1, parameter2, ...)</p>
+            <p>The code to be executed, by the function, is placed inside curly brackets: {}</p>
+        <pre>
+        <section>
+function name(parameter1, parameter2, parameter3) {
+    // code to be executed
+}
+        </section>
+        </pre>
+        <p>Function parameters are listed inside the parentheses () in the function definition.</p>
+        <p>Function arguments are the values received by the function when it is invoked.</p>
+        <p>Inside the function, the arguments (the parameters) behave as local variables.</p>
+        </div>
+
+        <div class="box">
+            <h2>Function Invocation</h2>
+          
+            <p>The code inside the function will execute when "something" invokes (calls) the function:</p>
+            <ul>
+                <li>
+                    When an event occurs (when a user clicks a button)
+                </li>
+                <li>
+                    When it is invoked (called) from JavaScript code
+                </li>
+                <li>
+                    Automatically (self invoked)
+                </li>
+            </ul>
+                
+
+        </div>
+        <div class="box">
+            <h2>Function Return</h2>
+          
+            <p>When JavaScript reaches a return statement, the function will stop executing.</p>
+                
+             <p> If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.
+
+            </p>
+            <p>Functions often compute a return value. The return value is "returned" back to the "caller":</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+<p>Calculate the product of two numbers, and return the result:</p>
+var x = myFunction(4, 3);   // Function is called, return value will end up in x
+function myFunction(a, b) {
+    return a * b;             // Function returns the product of a and b
+}
+<p>The result in x will be:</p><p>12</p>
+                    </pre>
+                    <a href="../examples/JSFunction/2.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+   
+
+
+    <div class="box">
+        <h2>Why Functions?</h2>
+        <p>You can reuse code: Define the code once, and use it many times.</p>
+        <p>You can use the same code many times with different arguments, to produce different results.</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+<p>Convert Fahrenheit to Celsius:</p>
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+}
+document.getElementById("demo").innerHTML = toCelsius(77);
+                </pre>
+                <a href="../examples/JSFunction/3.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The () Operator Invokes the Function</h2>
+        <p>Using the example above, toCelsius refers to the function object, and toCelsius() refers to the function result.</p>
+        <p>Accessing a function without () will return the function object instead of the function result.</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+}
+document.getElementById("demo").innerHTML = toCelsius;
+                </pre>
+                <a href="../examples/JSFunction/4.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Functions Used as Variable Values</h2>
+        <p>Functions can be used the same way as you use variables, in all types of formulas, assignments, and calculations.</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+<p>Instead of using a variable to store the return value of a function:</p>
+var x = toCelsius(77);
+var text = "The temperature is " + x + " Celsius";
+<p>You can use the function directly, as a variable value:</p>
+var text = "The temperature is " + toCelsius(77) + " Celsius";
+                </pre>
+                <a href="../examples/JSFunction/5.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Local Variables</h2>
+        <p>Variables declared within a JavaScript function, become LOCAL to the function.</p>
+        <p>Local variables can only be accessed from within the function.</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+<p style="color: green;">// code here can NOT use carName</p> 
+function myFunction() {
+var carName = "Volvo";
+<p style="color: green;"> // code here CAN use carName</p>
+}
+<p style="color: green;">// code here can NOT use carName</p> 
+                </pre>
+                <a href="../examples/JSFunction/6.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>

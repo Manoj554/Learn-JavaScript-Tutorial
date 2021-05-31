@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="heading">HTML DOM Document</h1>
+    <div class="box">
+        <p>The HTML DOM document object is the owner of all other objects in your web page.</p>
+        <h1>The HTML DOM Document Object</h1>
+        <p>The document object represents your web page.</p>
+        <p>If you want to access any element in an HTML page, you always start with accessing the document object.</p>
+        <p>Below are some examples of how you can use the document object to access and manipulate HTML.</p>
+        <h2>Finding HTML Elements</h2>
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>document.getElementById(id)</td>
+                    <td>Find an element by element id</td>
+                </tr>
+                <tr>
+                    <td>document.getElementsByTagName(name)</td>
+                    <td>Find elements by tag name</td>
+                </tr>
+                <tr>
+                    <td>document.getElementsByClassName(name)</td>
+                    <td>Find elements by class name</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Changing HTML Elements</h2>
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+            <thead>
+                <th>Property</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>element.innerHTML =  new html content</td>
+                    <td>Change the inner HTML of an element</td>
+                </tr>
+                <tr>
+                    <td>element.attribute = new value</td>
+                    <td>Change the attribute value of an HTML element</td>
+                </tr>
+                <tr>
+                    <td>element.style.property = new style</td>
+                    <td>Change the style of an HTML element</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>element.setAttribute(attribute, value)</td>
+                    <td>Change the attribute value of an HTML element</td>
+                </tr>
+            </tbody>
+
+        </table>
+        <h2>Adding and Deleting Elements</h2>
+
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>document.createElement(element)</td>
+                    <td>Create an HTML element</td>
+                </tr>
+                <tr>
+                    <td>document.removeChild(element)</td>
+                    <td>Remove an HTML element</td>
+                </tr>
+                <tr>
+                    <td>document.appendChild(element)</td>
+                    <td>Add an HTML element</td>
+                </tr>
+                <tr>
+                    <td>document.replaceChild(new, old)</td>
+                    <td>Replace an HTML element</td>
+                </tr>
+                <tr>
+                    <td>document.write(text)</td>
+                    <td>Write into the HTML output stream</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Adding Events Handlers</h2>
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+            <thead>
+                <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>document.getElementById(id).onclick = function(){code}</td>
+                    <td>Adding event handler code to an onclick event</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="box">
+        <h1>Finding HTML Objects</h1>
+        <p>The first HTML DOM Level 1 (1998), defined 11 HTML objects, object collections, and properties. These are still valid in HTML5.</p>
+        <p>Later, in HTML DOM Level 3, more objects, collections, and properties were added.</p>
+
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Description</th>
+                    <th>DOM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>document.anchors</td>
+                    <td>Returns all &lta&gt elements that have a name attribute</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.applets</td>
+                    <td>Returns all &ltapplet&gt elements (Deprecated in HTML5)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.baseURI</td>
+                    <td>Returns the absolute base URI of the document</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.body</td>
+                    <td>Returns the &ltbody&gt element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.cookie</td>
+                    <td>Returns the document's cookie</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.doctype</td>
+                    <td>Returns the document's doctype</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.documentElement</td>
+                    <td>Returns the &lthtml&gt element<</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.documentMode</td>
+                    <td>Returns the mode used by the browser</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.documentURI</td>
+                    <td>Returns the URI of the document</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.domain</td>
+                    <td>Returns the domain name of the document server</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.domConfig</td>
+                    <td>Obsolete. Returns the DOM configuration</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.embeds</td>
+                    <td>Returns all &ltembed&gt elements</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.forms</td>
+                    <td>Returns all &ltform&gt elements</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.head</td>
+                    <td>Returns all &lthead&gt elements</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.images</td>
+                    <td>Returns all &ltimg&gt elements</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.implementation</td>
+                    <td>Returns the DOM implementation</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.inputEncoding</td>
+                    <td>Returns the document's encoding (character set)</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.lastModified</td>
+                    <td>Returns the date and time the document was updated</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.links</td>
+                    <td>Returns all &ltarea&gt and &lta&gt elements that have a href attribute</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.readyState</td>
+                    <td>Returns the (loading) status of the document</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.referrer</td>
+                    <td>Returns the URI of the referrer (the linking document)</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.scripts</td>
+                    <td>Returns all &ltscript&gt elements</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.strictErrorChecking</td>
+                    <td>Returns if error checking is enforced</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>document.title</td>
+                    <td>Returns the &lttitle&gt element</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>document.URL</td>
+                    <td>Returns the complete URL of the document</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

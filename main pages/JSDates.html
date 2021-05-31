@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Date Objects</title>
+    <style>table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }</style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Date Objects</h1>
+    
+    <div class="box">
+        <h2>Creating Date Objects</h2>
+        <p>Date objects are created with the new Date() constructor.</p>
+        <p>There are 4 ways to create a new date object:</p>
+
+        <div>
+            <section>
+                <pre>
+new Date()
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
+new Date(milliseconds)
+new Date(date string)
+                </pre>
+            </section>
+        </div>
+    </div>
+
+        <div class="box">
+            <h2>new Date()</h2>
+          
+            <p>new Date() creates a new date object with the current date and time:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date();
+                    </pre>
+                    <a href="../examples/JS Dates/1.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+                </section>
+            </div>  
+            <p>Date objects are static. The computer time is ticking, but date objects are not.</p>
+        </div>
+        <div class="box">
+            <h2>new Date(year, month, ...)</h2>
+          
+            <p>new Date(year, month, ...) creates a new date object with a specified date and time.</p>
+            <p>7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order):</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date(2018, 11, 24, 10, 33, 30, 0);
+                    </pre>
+                    <a href="../examples/JS Dates/2.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+                </section>
+            </div>  
+            <p>Note: JavaScript counts months from 0 to 11.</p>
+            <p>January is 0. December is 11.</p>
+            <p>6 numbers specify year, month, day, hour, minute, second.</p>
+            <p>5 numbers specify year, month, day, hour, and minute.</p>
+            <p>4 numbers specify year, month, day, and hour.</p>
+            <p>3 numbers specify year, month, and day.</p>
+            <p>2 numbers specify year and month.</p>
+            <p>You cannot omit month. If you supply only one parameter it will be treated as milliseconds.</p>
+        </div>
+   
+        <div class="box">
+            <h2>Previous Century</h2>
+            <p>One and two digit years will be interpreted as 19xx:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date(99, 11, 24);
+                    </pre>
+                    <a href="../examples/JS Dates/3.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>new Date(dateString)</h2>
+            <p>new Date(dateString) creates a new date object from a date string:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("October 13, 2014 11:13:00");
+                    </pre>
+                    <a href="../examples/JS Dates/4.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>JavaScript Stores Dates as Milliseconds</h2>
+            <p>JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC (Universal Time Coordinated).</p>
+            <div>
+                <section>
+                    <pre>
+Zero time is January 01, 1970 00:00:00 UTC.
+                    </pre>
+                </section>
+            </div>
+            <p>Now the time is: 1611404246358 milliseconds past January 01, 1970</p>
+        </div>
+
+        <div class="box">
+            <h2>new Date(milliseconds)</h2>
+            <p>new Date(milliseconds) creates a new date object as zero time plus milliseconds:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date(0);
+                    </pre>
+                    <a href="../examples/JS Dates/5.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>01 January 1970 plus 100 000 000 000 milliseconds is approximately 03 March 1973:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date(100000000000);
+                    </pre>
+                    <a href="../examples/JS Dates/6.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>January 01 1970 minus 100 000 000 000 milliseconds is approximately October 31 1966:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date(-100000000000);
+                    </pre>
+                    <a href="../examples/JS Dates/7.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Date Methods</h2>
+            <p>When a Date object is created, a number of methods allow you to operate on it.</p>
+            <p>Date methods allow you to get and set the year, month, day, hour, minute, second, and millisecond of date objects, using either local time or UTC (universal, or GMT) time.</p>
+
+        </div>
+        <div class="box">
+            <h2>Displaying Dates</h2>
+            <p>JavaScript will (by default) output dates in full text string format:</p>
+            <div>
+                <section>
+                    <pre>
+Wed Mar 25 2015 05:30:00 GMT+0530 (India Standard Time)
+                    </pre>
+                    <a href="../examples/JS Dates/8.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>When you display a date object in HTML, it is automatically converted to a string, with the toString() method.</p>
+            <div>
+                <p>Example :-</p>
+                <section>
+                    <pre>
+d = new Date();
+document.getElementById("demo").innerHTML = d;
+                    </pre>
+                </section>
+            </div>
+            <div>
+                <p>Same as:</p>
+                <section>
+                    <pre>
+d = new Date();
+document.getElementById("demo").innerHTML = d.toString();
+                    </pre>
+                    <a href="../examples/JS Dates/9.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+                </section>
+            </div>
+            <p>The toUTCString() method converts a date to a UTC string (a date display standard).</p>
+            <div>
+                <p>Example :-</p>
+                <section>
+                    <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toUTCString();
+                    </pre>
+                    <a href="../examples/JS Dates/10.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>The toDateString() method converts a date to a more readable format:</p>
+            <div>
+                <p>Example :-</p>
+                <section>
+                    <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+                    </pre>
+                    <a href="../examples/JS Dates/11.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>The toISOString() method converts a date to a string, using the ISO standard format:</p>
+            <div>
+                <p>Example :-</p>
+                <section>
+                    <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toISOString();
+                    </pre>
+                    <a href="../examples/JS Dates/12.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>JavaScript Date Input</h2>
+            <p>There are generally 3 types of JavaScript date input formats:</p>
+            <table>
+                <tr>
+                  <th>Type</th>
+                  <th>Example</th>
+                </tr>
+                <tr>
+                  <td>ISO Date</td>
+                  <td>"2015-03-25" (The International Standard)</td>
+                </tr>
+                <tr>
+                  <td>Short Date</td>
+                  <td>"03/25/2015"</td>
+                </tr>
+                <tr>
+                  <td>Long Date</td>
+                  <td>"Mar 25 2015" or "25 Mar 2015"</td>
+                </tr>
+              </table>
+        </div>
+        <div class="box">
+            <h2>JavaScript Date Output</h2>
+            <p>Independent of input format, JavaScript will (by default) output dates in full text string format:</p>
+            <div>
+                <section>
+                <pre>
+Wed Mar 25 2015 05:30:00 GMT+0530 (India Standard Time)
+                    </pre>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>JavaScript ISO Dates</h2>
+            <p>ISO 8601 is the international standard for the representation of dates and times.</p>
+            <p>The ISO 8601 syntax (YYYY-MM-DD) is also the preferred JavaScript date format:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("2015-03-25");
+                    </pre>
+                    <a href="../examples/JS Dates/13.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>ISO Dates (Year and Month)</h2>
+            <p>ISO dates can be written without specifying the day (YYYY-MM):</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("2015-03");
+                    </pre>
+                    <a href="../examples/JS Dates/14.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>ISO Dates (Date-Time)</h2>
+            <p>ISO dates can be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ):</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("2015-03-25T12:00:00Z");
+                    </pre>
+                    <a href="../examples/JS Dates/15.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>Date and time is separated with a capital T.</p>
+            <p>UTC time is defined with a capital letter Z.</p>
+            <p>If you want to modify the time relative to UTC, remove the Z and add +HH:MM or -HH:MM instead:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("2015-03-25T12:00:00-06:30");
+                    </pre>
+                    <a href="../examples/JS Dates/16.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>UTC (Universal Time Coordinated) is the same as GMT (Greenwich Mean Time).</p>
+            <p>Omitting T or Z in a date-time string can give different results in different browsers.</p>
+        </div>
+        <div class="box">
+            <h2>Time Zones</h2>
+            <p>When setting a date, without specifying the time zone, JavaScript will use the browser's time zone.</p>
+            <p>When getting a date, without specifying the time zone, the result is converted to the browser's time zone.</p>
+            <p>In other words: If a date/time is created in GMT (Greenwich Mean Time), the date/time will be converted to CDT (Central US Daylight Time) if a user browses from central US.</p>
+        </div>
+        <div class="box">
+            <h2>JavaScript Short Dates</h2>
+            <p>Short dates are written with an "MM/DD/YYYY" syntax like this:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("03/25/2015");
+                    </pre>
+                    <a href="../examples/JS Dates/17.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>JavaScript Long Dates</h2>
+            <p>Long dates are most often written with a "MMM DD YYYY" syntax like this:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date("Mar 25 2015");
+                    </pre>
+                    <a href="../examples/JS Dates/18.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>Month and day can be in any order.</p>
+            <p>And, month can be written in full (January), or abbreviated (Jan).</p>
+            <p>Commas are ignored. Names are case insensitive.</p>
+        </div>
+        <div class="box">
+            <h2>Date Input - Parsing Dates</h2>
+            <p>If you have a valid date string, you can use the Date.parse() method to convert it to milliseconds.</p>
+            <p>Date.parse() returns the number of milliseconds between the date and January 1, 1970:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var msec = Date.parse("March 21, 2012");
+document.getElementById("demo").innerHTML = msec;
+                    </pre>
+                    <a href="../examples/JS Dates/19.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>You can then use the number of milliseconds to convert it to a date object:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var msec = Date.parse("March 21, 2012");
+var d = new Date(msec);
+document.getElementById("demo").innerHTML = d;
+                    </pre>
+                    <a href="../examples/JS Dates/20.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>JavaScript Get Date Methods</h2>
+            <p>These methods can be used for getting information from a date object:</p>
+            <table>
+                <tr>
+                  <th>Method</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>getFullYear()</td>
+                  <td>Get the year as a four digit number (yyyy)</td>
+                </tr>
+                <tr>
+                  <td>getMonth()</td>
+                  <td>Get the month as a number (0-11)</td>
+                </tr>
+                <tr>
+                  <td>getDate()</td>
+                  <td>Get the day as a number (1-31)</td>
+                </tr>
+                <tr>
+                    <td>getHours()</td>
+                    <td>Get the hour (0-23)</td>
+                  </tr>
+                  <tr>
+                    <td>getMinutes()</td>
+                    <td>Get the minute (0-59)</td>
+                  </tr>
+                  <tr>
+                    <td>getSeconds()</td>
+                    <td>Get the second (0-59)</td>
+                  </tr>
+                  <tr>
+                    <td>getMilliseconds()</td>
+                    <td>Get the millisecond (0-999)</td>
+                  </tr>
+                  <tr>
+                    <td>getTime()</td>
+                    <td>Get the time (milliseconds since January 1, 1970)</td>
+                  </tr>
+                  <tr>
+                    <td>getDay()</td>
+                    <td>Get the weekday as a number (0-6)</td>
+                  </tr>
+                  <tr>
+                    <td>Date.now()</td>
+                    <td>Get the time. ECMAScript 5.</td>
+                  </tr>
+              </table>
+        </div>
+        <div class="box">
+            <h2>The getTime() Method</h2>
+            <p>The getTime() method returns the number of milliseconds since January 1, 1970:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getTime();
+                    </pre>
+                    <a href="../examples/JS Dates/21.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The getFullYear() Method</h2>
+        <p>The getFullYear() method returns the year of a date as a four digit number:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getFullYear();
+                </pre>
+                <a href="../examples/JS Dates/22.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The getMonth() Method</h2>
+        <p>The getMonth() method returns the month of a date as a number (0-11):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getMonth();
+                </pre>
+                <a href="../examples/JS Dates/23.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The getDate() Method</h2>
+        <p>The getDate() method returns the day of a date as a number (1-31):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getDate();
+                </pre>
+                <a href="../examples/JS Dates/24.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The getHours() Method</h2>
+        <p>The getHours() method returns the hours of a date as a number (0-23):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getHours();
+                </pre>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <div>
+            <section>
+                <pre>
+Similarly, you can use other Date Get Methods to get your tasks done.
+                </pre>
+            </section>
+        </div> 
+    </div>
+    <div class="box">
+        <h2>JavaScript Set Date Methods</h2>
+        <p>Set Date methods let you set date values (years, months, days, hours, minutes, seconds, milliseconds) for a Date Object.</p>
+        <table>
+            <tr>
+              <th>Method</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>setDate()</td>
+              <td>Set the day as a number (1-31)</td>
+            </tr>
+            <tr>
+              <td>setFullYear()</td>
+              <td>Set the year (optionally month and day)</td>
+            </tr>
+            <tr>
+              <td>setHours()</td>
+              <td>Set the hour (0-23)</td>
+            </tr>
+            <tr>
+                <td>setMilliseconds()</td>
+                <td>Set the milliseconds (0-999)</td>
+              </tr>
+              <tr>
+                <td>setMinutes()</td>
+                <td>Set the minutes (0-59)</td>
+              </tr>
+              <tr>
+                <td>setSeconds()</td>
+                <td>Set the second (0-59)</td>
+              </tr>
+              <tr>
+                <td>setMonth()</td>
+                <td>Set the month (0-11)</td>
+              </tr>
+              <tr>
+                <td>setSeconds()td>
+                <td>Set the seconds (0-59)</td>
+              </tr>
+              <tr>
+                <td>setTime()</td>
+                <td>Set the time (milliseconds since January 1, 1970)</td>
+              </tr>
+          </table>
+    </div>
+    <div class="box">
+        <h2>The setFullYear() Method</h2>
+        <p>The setFullYear() method sets the year of a date object. In this example to 2020:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+&lt;script&gt;
+var d = new Date();
+d.setFullYear(2020);
+document.getElementById("demo").innerHTML = d;
+&lt;/script&gt;
+                </pre>
+                <a href="../examples/JS Dates/25.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The setMonth() Method</h2>
+        <p>The setMonth() method sets the month of a date object (0-11):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+&lt;script&gt;
+var d = new Date();
+d.setMonth(11);
+document.getElementById("demo").innerHTML = d;
+&lt;/script&gt;
+                </pre>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The setDate() Method</h2>
+        <p>The setDate() method sets the day of a date object (1-31):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+&lt;script&gt;
+var d = new Date();
+d.setDate(15);
+document.getElementById("demo").innerHTML = d;
+&lt;/script&gt;
+                </pre>
+
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>The setHours() Method</h2>
+        <p>The setHours() method sets the hours of a date object (0-23):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+&lt;script&gt;
+var d = new Date();
+d.setHours(22);
+document.getElementById("demo").innerHTML = d;
+&lt;/script&gt;
+                </pre>
+
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <div>
+            <section>
+                <pre>
+Similarly, you can use other Date Set Methods to get your tasks done.
+                </pre>
+            </section>
+        </div> 
+    </div>
+    <div class="box">
+        <h2>Compare Dates</h2>
+        <p>Dates can easily be compared.</p>
+        <p>The following example compares today's date with January 14, 2100:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var today, someday, text;
+today = new Date();
+someday = new Date();
+someday.setFullYear(2100, 0, 14);
+
+if (someday > today) {
+text = "Today is before January 14, 2100.";
+} else {
+text = "Today is after January 14, 2100.";
+}
+document.getElementById("demo").innerHTML = text;
+                </pre>
+                <a href="../examples/JS Dates/26.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

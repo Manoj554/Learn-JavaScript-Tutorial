@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Variables</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Variables</h1>
+
+   
+    <div class="box">
+
+        <p>JavaScript variables are containers for storing data values.</p>
+        <p>In this example,<mark> x</mark>,<mark> y</mark>, and <mark>z</mark>, are variables, declared with the<mark> var
+        </mark>keyword:</p>
+        <div>
+            <p>Example :-
+            </p>
+            <section>
+                <pre>
+var x = 5;
+var y = 6;
+var z = x + y; 
+                </pre>
+                <a href="../examples/JSVariables/example1.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+        <p>From the example above, you can expect:</p>
+        <ul>
+            <li>x stores the value 5</li>
+            <li>y stores the value 6</li>
+            <li>z stores the value 11</li>
+
+        </ul>
+    </div>
+    <div class="box">
+        <h1>Using let and const (2015)</h1>
+        <p>Before 2015, using the<mark> var </mark>keyword was the only way to declare a JavaScript variable.</p>
+        <p>The 2015 version of JavaScript (ES6 - ECMAScript 2015) allows the use of the <mark>const</mark> keyword to
+        define a variable that cannot be reassigned, and the let keyword to define a variable with restricted scope.</p>
+        <p>Because it is a little complicated to describe the difference between these keywords, and because they are not
+        supported in older browsers, the first part of this tutorial will most often use<mark> var</mark>.</p>
+        <p>Safari 10 and Edge 14 were the first browsers to fully support ES6</p>
+    </div>
+    <div class="box">
+        <h1>Much Like Algebra</h1>
+        <p>In this example, price1, price2, and total, are variables:</p>
+        <div>
+            <p>Example :-
+            </p>
+            <section>
+                <pre>
+var price1 = 5;
+var price2 = 6;
+var total = price1 + price2; 
+                </pre>
+                <a href="../examples/JSVariables/example2.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+        <p>In programming, just like in algebra, we use variables (like price1) to hold values.</p>
+        <p>In programming, just like in algebra, we use variables in expressions (total = price1 + price2).</p>
+        <p>From the example above, you can calculate the total to be 11.</p>
+        <p>JavaScript variables are containers for storing data values.</p>
+    </div>
+    <div class="box">
+        <h1>JavaScript Identifiers</h1>
+        <p>All JavaScript<b> variables</b> must be<b> identified </b>with<b> unique names</b>.</p>
+        <p>These unique names are called <b>identifiers</b>.</p>
+        <p>Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).</p>
+        <p>The general rules for constructing names for variables (unique identifiers) are:</p>
+        <ul>
+            <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+            <li>Names must begin with a letter</li>
+            <li>Names can also begin with $ and _ (but we will not use it in this tutorial)</li>
+            <li>Names are case sensitive (y and Y are different variables)</li>
+            <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+        </ul>
+        JavaScript identifiers are case-sensitive.
+    </div>
+    <div class="box">
+        <h1>The Assignment Operator</h1>
+        <p>In JavaScript, the equal sign (<mark>=</mark>) is an "assignment" operator, not an "equal to" operator.</p>
+
+        <p>This is different from algebra. The following does not make sense in algebra:</p>
+        <div>
+            <section>
+                <pre>
+x = x + 5
+                </pre>
+
+            </section>
+        </div>
+        <p>In JavaScript, however, it makes perfect sense: it assigns the value of x + 5 to x.</p>
+        <p>(It calculates the value of x + 5 and puts the result into x. The value of x is incremented by 5.)</p>
+        <p>The "equal to" operator is written like == in JavaScript.</p>
+    </div>
+    <div class="box">
+        <h1>JavaScript Data Types</h1>
+        <p>JavaScript variables can hold numbers like 100 and text values like "John Doe".</p>
+        <p>In programming, text values are called text strings.</p>
+        <p>JavaScript can handle many types of data, but for now, just think of numbers and strings.</p>
+        <p>Strings are written inside double or single quotes. Numbers are written without quotes.</p>
+        <p>If you put a number in quotes, it will be treated as a text string.</p>
+
+        <div>
+            <p>Example :-
+            </p>
+            <section>
+                <pre>
+var person = "John Doe";
+var pi = 3.14;
+var answer = 'Yes I am!';
+                </pre>
+                <a href="../examples/JSVariables/example3.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Declaring (Creating) JavaScript Variables</h1>
+        <p>Creating a variable in JavaScript is called "declaring" a variable.</p>
+        <p>You declare a JavaScript variable with the<mark>var </mark>keyword:</p>
+        <div>
+            <section>
+                <pre>
+var carName;
+                </pre>
+
+            </section>
+        </div>
+        <p>After the declaration, the variable has no value (technically it has the value of <mark>undefined</mark>).</p>
+        <p>To<b> assign </b>a value to the variable, use the equal sign:</p>
+        <div>
+            <section>
+                <pre>
+carName = "Volvo";
+                </pre>
+
+            </section>
+        </div>
+        <p>You can also assign a value to the variable when you declare it:</p>
+        <div>
+            <section>
+                <pre>
+var carName = "Volvo";
+                </pre>
+
+            </section>
+        </div>
+        <p>In the example below, we create a variable called <mark>carName</mark> and assign the value "Volvo" to it.</p>
+        <p>Then we "output" the value inside an HTML paragraph with id="demo":</p>
+        <div>
+            <p>Example :-
+            </p>
+            <section>
+                <pre>
+&lt;p id="demo"&gt;&lt;/p&gt;
+&lt;script&gt;
+var carName = "Volvo";
+document.getElementById("demo").innerHTML = carName;
+&lt;/script&gt;
+                </pre>
+                <a href="../examples/JSVariables/example4.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+
+    </div>
+    <div class="box">
+        <h1>JavaScript Dollar Sign $</h1>
+        <p>Remember that JavaScript identifiers (names) must begin with:</p>
+        <ul>
+            <li>A letter (A-Z or a-z)</li>
+            <li>A dollar sign ($)</li>
+            <li>Or an underscore (_)</li>
+        </ul>
+        <p>Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names:</p>
+        <div>
+            <p>Example :-
+            </p>
+            <section>
+                <pre>
+var $$$ = "Hello World";
+var $ = 2;
+var $myMoney = 5;
+                </pre>
+                <a href="../examples/JSVariables/example5.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+        <p>Using the dollar sign is not very common in JavaScript, but professional programmers often use it as an alias
+        for the main function in a JavaScript library.</p>
+        <p>In the JavaScript library jQuery, for instance, the main function<mark> $ </mark>is used to select HTML
+        elements. In jQuery<mark>$("p");</mark> means "select all p elements".</p>
+    </div>
+
+</body>
+
+</html>

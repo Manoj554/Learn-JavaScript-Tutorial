@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Navigation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1 id="heading">HTML DOM Navigation</h1>
+    <div class="box">
+        <p>With the HTML DOM, you can navigate the node tree using node relationships.</p>
+        <h2>DOM Nodes</h2>
+        <p>According to the W3C HTML DOM standard, everything in an HTML document is a node:</p>
+        <ul>
+            <li>The entire document is a document node</li>
+            <li>Every HTML element is an element node</li>
+            <li>The text inside HTML elements are text nodes</li>
+            <li>Every HTML attribute is an attribute node (deprecated)</li>
+            <li>All comments are comment nodes</li>
+        </ul>
+        <center>
+            <img src="./images/htmltree.gif" alt="404" height="300xpx" width="600px">
+        </center>
+        <p>With the HTML DOM, all nodes in the node tree can be accessed by JavaScript.</p>
+        <p>New nodes can be created, and all nodes can be modified or deleted.</p>
+    </div>
+
+    <div class="box">
+        <h2>Node Relationships</h2>
+        <p>The nodes in the node tree have a hierarchical relationship to each other.</p>
+        <p>The terms parent, child, and sibling are used to describe the relationships.</p>
+        <ul>
+            <li>In a node tree, the top node is called the root (or root node)</li>
+            <li>Every node has exactly one parent, except the root (which has no parent)</li>
+            <li>A node can have a number of children</li>
+            <li>Siblings (brothers or sisters) are nodes with the same parent</li>
+        </ul>
+        <div>
+            <div>
+                <center>
+                    <img src="./images/navigate.gif" alt="404" height="400px" width="500px">
+                </center>
+            </div>
+            <pre style="background-color: white;">
+                &lthtml&gt
+                   &lthead&gt
+                       &lttitle&gtDOM Tutorial&lt/title&gt 
+                   &lt/head&gt
+
+                   &ltbody&gt
+                      &lth1&gtDOM Lesson one&lt/h1&gt 
+                      &ltp&gtHello World!&lt/p&gt
+                   &lt/body&gt 
+                &lt/html&gt
+            </pre>
+        </div>
+        <p>From the HTML above you can read:</p>
+        <ul>
+            <li>&lthtml> is the root node</li>
+            <li>&lthtml> has no parents</li>
+            <li>&lthtml> is the parent of &lthead> and &ltbody></li>
+            <li>&lthead> is the first child of &lthtml></li>
+            <li>&ltbody> is the last child of &lthtml></li>
+        </ul>
+        <p>and:</p>
+        <ul>
+            <li>&lthead> has one child: &lttitle></li>
+            <li>&lttitle> has one child (a text node): "DOM Tutorial"</li>
+            <li>&ltbody> has two children: &lth1> and &ltp></li>
+            <li>&lth1> has one child: "DOM Lesson one"</li>
+            <li>&ltp> has one child: "Hello world!"</li>
+            <li>&lth1> and &ltp> are siblings</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>Navigating Between Nodes</h2>
+        <p>You can use the following node properties to navigate between nodes with JavaScript:</p>
+        <ul>
+            <li>parentNode</li>
+            <li>childNodes[nodenumber]</li>
+            <li>firstChild</li>
+            <li>lastChild</li>
+            <li>nextSibling</li>
+            <li>previousSibling</li>
+        </ul>
+    </div>
+    <div class="box">
+        <h2>Child Nodes and Node Values</h2>
+        <p><mark>A common error in DOM processing is to expect an element node to contain text.</mark></p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="background-color: white;">&lttitle id="demo">DOM Tutorial&lt/title></p>
+            </section>
+        </div>
+        <p>The element node &lttitle> (in the example above) does not contain text.</p>
+        <p>It contains a text node with the value "DOM Tutorial".</p>
+        <p>The value of the text node can be accessed by the node's innerHTML property:</p>
+        <section>
+            <p style="background-color: white;">var myTitle = document.getElementById("demo").innerHTML;</p>
+        </section>
+        <p>Accessing the innerHTML property is the same as accessing the nodeValue of the first child:</p>
+        <section>
+            <p style="background-color: white;">var myTitle = document.getElementById("demo").firstChild.nodeValue;</p>
+        </section>
+        <p>Accessing the first child can also be done like this</p>
+        <section>
+            <p style="background-color: white;">var myTitle = document.getElementById("demo").childNodes[0].nodeValue;
+            </p>
+        </section>
+        <p>All the (3) following examples retrieves the text of an
+        &lth1> element and copies it into a &ltp> element:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+&lthtml>
+&ltbody>
+
+   &lth1 id="id01">My First Page&lt/h1>
+   &ltp id="id02">&lt/p>
+
+   &ltscript>
+      document.getElementById("id02").innerHTML = document.getElementById("id01").innerHTML;
+   &lt/script>
+
+&lt/body>
+&lt/html>
+
+                </pre>
+                <a href="./examples/domnavigation/6.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+&lthtml>
+&ltbody>
+                        
+    &lth1 id="id01">My First Page&lt/h1>
+    &ltp id="id02">&lt/p>
+                        
+    &ltscript>
+        document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
+    &lt/script>
+                        
+&lt/body>
+&lt/html>
+                </pre>
+                <a href="./examples/domnavigation/2.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+&lthtml>
+&ltbody>
+                        
+    &lth1 id="id01">My First Page&lt/h1>
+    &ltp id="id02">Hello!&lt/p>
+                        
+    &ltscript>
+      document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
+    &lt/script>
+                        
+&lt/body>
+&lt/html>
+                </pre>
+                <a href="./examples/domnavigation/3.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>InnerHTML</h2>
+        <p>In this tutorial we use the innerHTML property to retrieve the content of an HTML element.</p>
+        <p>However, learning the other methods above is useful for understanding the tree structure and the navigation of the DOM.</p>
+    </div>
+
+    <div class="box">
+        <h2>DOM Root Nodes</h2>
+        <p>There are two special properties that allow access to the full document:</p>
+        <ul>
+            <li>document.body - The body of the document</li>
+            <li>document.documentElement - The full document</li>
+        </ul>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+&lthtml>
+&ltbody>
+                        
+    &ltp>Hello World!&lt/p>
+    &ltdiv>
+    &ltp>The DOM is very useful!&lt/p>
+    &ltp>This example demonstrates the &ltb>document.body&lt/b> property.&lt/p>
+    &lt/div>
+                        
+    &ltscript>
+        alert(document.body.innerHTML);
+    &lt/script>
+                        
+&lt/body>
+&lt/html>
+                </pre>
+                <a href="./examples/domnavigation/4.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+&lthtml>
+&ltbody>
+                        
+    &ltp>Hello World!&lt/p>
+    &ltdiv>
+    &ltp>The DOM is very useful!&lt/p>
+    &ltp>This example demonstrates the &ltb>document.documentElement&lt/b> property.&lt/p>
+    &lt/div>
+                        
+    &ltscript>
+        alert(document.documentElement.innerHTML);
+    &lt/script>
+                        
+&lt/body>
+&lt/html>
+                </pre>
+                <a href="./examples/domnavigation/5.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>The nodeName Property</h2>
+        <p>The <b>nodeName</b> property specifies the name of a node.</p>
+        <ul>
+            <li>nodeName is read-only</li>
+            <li>nodeName of an element node is the same as the tag name</li>
+            <li>nodeName of an attribute node is the attribute name</li>
+            <li>nodeName of a text node is always #text</li>
+            <li>nodeName of the document node is always #document</li>
+        </ul>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &lth1 id="id01">My First Page&lt/h1>
+    &ltp id="id02">&lt/p>
+                    
+    &ltscript>
+        document.getElementById("id02").innerHTML = document.getElementById("id01").nodeName;
+    &lt/script>
+                </pre>
+                <a href="./examples/domnavigation/1.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>The nodeValue Property</h2>
+        <p>The <b>nodeValue</b> property specifies the value of a node.</p>
+        <ul>
+            <li>nodeValue for element nodes is <b>null</b></li>
+            <li>nodeValue for text nodes is the text itself</li>
+            <li>nodeValue for attribute nodes is the attribute value</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>The nodeType Property</h2>
+        <p>The nodeType property is read only. It returns the type of a node.</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &lth1 id="id01">My First Page&lt/h1>
+    &ltp id="id02">&lt/p>
+                    
+    &ltscript>
+        document.getElementById("id02").innerHTML = document.getElementById("id01").nodeType;
+    &lt/script>
+                </pre>
+                <a href="./examples/domnavigation/7.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <p>The most important nodeType properties are:</p>
+        <table  rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+            <thead>
+                <tr>
+                    <th>Node</th>
+                    <th>Type</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ELEMENT_NODE</td>
+                    <td>1</td>
+                    <td>&lth1 class="heading">W3Schools&lt/h1></td>
+                </tr>
+                <tr>
+                    <td>ATTRIBUTE_NODE</td>
+                    <td>2</td>
+                    <td>class = "heading" (deprecated)</td>
+                </tr>
+                <tr>
+                    <td>TEXT_NODE</td>
+                    <td>3</td>
+                    <td>W3Schools</td>
+                </tr>
+                <tr>
+                    <td>COMMENT_NODE</td>
+                    <td>8</td>
+                    <td>&lt!-- This is a comment --></td>
+                </tr>
+                <tr>
+                    <td>DOCUMENT_NODE</td>
+                    <td>9</td>
+                    <td>The HTML document itself (the parent of &lthtml>)</td>
+                </tr>
+                <tr>
+                    <td>DOCUMENT_TYPE_NODE</td>
+                    <td>10</td>
+                    <td>&lt!Doctype html></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

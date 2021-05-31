@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Numbers</title>
+    <style>table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }</style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Numbers</h1>
+
+    <div class="box">
+        <p>JavaScript has only one type of number. Numbers can be written with or without decimals.</p>
+
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 3.14;    // A number with decimals
+var y = 3;       // A number without decimals
+                </pre>
+            </section>
+        </div>
+        <p>Extra large or extra small numbers can be written with scientific (exponent) notation:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 123e5;    // 12300000
+var y = 123e-5;   // 0.00123
+                </pre>
+            </section>
+        </div>
+    </div>
+
+        <div class="box">
+            <h2>Precision</h2>
+          
+            <p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits.</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var x = 999999999999999;   // x will be 999999999999999
+var y = 9999999999999999;  // y will be 10000000000000000
+                    </pre>
+                </section>
+            </div>  
+            <p>The maximum number of decimals is 17, but floating point arithmetic is not always 100% accurate:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var x = 0.2 + 0.1;         // x will be 0.30000000000000004
+                    </pre>
+                </section>
+            </div>  
+            <p>To solve the problem above, it helps to multiply and divide:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var x = (0.2 * 10 + 0.1 * 10) / 10;       // x will be 0.3
+                    </pre>
+                </section>
+            </div>  
+        </div>
+        <div class="box">
+            <h2>Adding Numbers and Strings</h2>
+          
+            <p>If you add two numbers, the result will be a number:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var x = 10;
+var y = 20;
+var z = x + y;           // z will be 30 (a number)
+                    </pre>
+                </section>
+            </div>
+            <p>If you add two strings, the result will be a string concatenation:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var x = "10";
+var y = "20";
+var z = x + y;           // z will be 1020 (a string)
+                    </pre>
+                </section>
+            </div>
+            <p>If you add a string and a number, the result will be a string concatenation:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var x = "10";
+var y = 20;
+var z = x + y;           // z will be 1020 (a string)
+                    </pre>
+                </section>
+            </div>
+        </div>
+   
+
+
+    <div class="box">
+        <h2>Numeric Strings</h2>
+        <p>JavaScript strings can have numeric content:</p>
+        <p>JavaScript will try to convert strings to numbers in all numeric operations:</p>
+        <p>This will work:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "100";
+var y = "10";
+var z = x / y;       // z will be 10    
+                </pre>
+            </section>
+        </div>
+        <p>This will also work:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "100";
+var y = "10";
+var z = x * y;       // z will be 1000   
+                </pre>
+            </section>
+        </div>
+        <p>And this will work:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "100";
+var y = "10";
+var z = x - y;       // z will be 90   
+                </pre>
+            </section>
+        </div>
+        <p>But this will not work:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "100";
+var y = "10";
+var z = x + y;       // z will not be 110 (It will be 10010)
+                </pre>
+            </section>
+        </div> 
+    </div>
+    <div class="box">
+        <h2>NaN - Not a Number</h2>
+        <p>NaN is a JavaScript reserved word indicating that a number is not a legal number.</p>
+        <p>Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 100 / "Apple";  // x will be NaN (Not a Number)
+                </pre>
+                <a href="../examples/JS Numbers/1.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+     
+    </div>
+    <div class="box">
+      
+        <p>You can use the global JavaScript function isNaN() to find out if a value is a number:</p>
+
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 100 / "Apple";
+isNaN(x);               // returns true because x is Not a Number
+                </pre>
+                <a href="../examples/JS Numbers/2.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+        <p>Watch out for NaN. If you use NaN in a mathematical operation, the result will also be NaN:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = NaN;
+var y = 5;
+var z = x + y;         // z will be NaN
+                </pre>
+                <a href="../examples/JS Numbers/3.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+        <p>NaN is a number: typeof NaN returns number:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+typeof NaN;            // returns "number"
+                </pre>
+                <a href="../examples/JS Numbers/4.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Infinity</h2>
+        <p>Infinity (or -Infinity) is the value JavaScript will return if you calculate a number outside the largest possible number.</p>
+        <div>
+            <p>Example :-</p>
+            <section>
+                <pre>
+var myNumber = 2;
+while (myNumber != Infinity) {   // Execute until Infinity
+myNumber = myNumber * myNumber;
+}
+                </pre>
+                <a href="../examples/JS Numbers/5.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+            </section>
+        </div>
+        <p>Division by 0 (zero) also generates Infinity:</p>
+        <div>
+            <p>Example :-</p>
+            <section>
+                <pre>
+var x =  2 / 0;       // x will be Infinity
+var y = -2 / 0;       // y will be -Infinity
+                </pre>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Hexadecimal</h2>
+        <p>JavaScript interprets numeric constants as hexadecimal if they are preceded by 0x.</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 0xFF;        // x will be 255
+                </pre>
+                <a href="../examples/JS Numbers/6.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Numbers Can be Objects</h2>
+        <p>Normally JavaScript numbers are primitive values created from literals:</p>
+        <p style="color: rgb(231, 20, 55);">var x = 123;</p>
+        <p>But numbers can also be defined as objects with the keyword new:</p>
+        <p style="color: rgb(221, 23, 56);">var y = new Number(123);</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 123;
+var y = new Number(123);
+
+// typeof x returns number
+// typeof y returns object
+                </pre>
+                <a href="../examples/JS Numbers/7.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+
+<div class="box">
+    <h2>The toPrecision() Method</h2>
+    <p>toPrecision() returns a string, with a number written with a specified length:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 9.656;
+x.toPrecision();        // returns 9.656
+x.toPrecision(2);       // returns 9.7
+x.toPrecision(4);       // returns 9.656
+x.toPrecision(6);       // returns 9.65600
+            </pre>
+            <a href="../examples/JS Numbers/8.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+
+</div>
+<div class="box">
+    <h2>The toString() Method</h2>
+    <p>The toString() method returns a number as a string.</p>
+    <p>All number methods can be used on any type of numbers (literals, variables, or expressions):</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 123;
+x.toString();            // returns 123 from variable x
+(123).toString();        // returns 123 from literal 123
+(100 + 23).toString();   // returns 123 from expression 100 + 23
+            </pre>
+            <a href="../examples/JS Numbers/9.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+
+</div>
+<div class="box">
+    <h2>The toExponential() Method</h2>
+    <p>toExponential() returns a string, with a number rounded and written using exponential notation.</p>
+    <p>A parameter defines the number of characters behind the decimal point:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 9.656;
+x.toExponential(2);     // returns 9.66e+0
+x.toExponential(4);     // returns 9.6560e+0
+x.toExponential(6);     // returns 9.656000e+0
+            </pre>
+            <a href="../examples/JS Numbers/10.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+
+</div>
+<div class="box">
+    <h2>The toFixed() Method</h2>
+    <p>toFixed() returns a string, with the number written with a specified number of decimals:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000
+            </pre>
+            <a href="../examples/JS Numbers/11.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+
+</div>
+<div class="box">
+    <h2>The valueOf() Method</h2>
+    <p>valueOf() returns a number as a number.</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 123;
+x.valueOf();            // returns 123 from variable x
+(123).valueOf();        // returns 123 from literal 123
+(100 + 23).valueOf();   // returns 123 from expression 100 + 23
+            </pre>
+            <a href="../examples/JS Numbers/12.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).</p>
+        <p>The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.</p>
+        <p>There is no reason to use it in your code.</p>
+</div>
+<div class="box">
+    <h2>Converting Variables to Numbers</h2>
+    <p>There are 3 JavaScript methods that can be used to convert variables to numbers:</p>
+    <ul>
+        <li>
+            The Number() method
+        </li>
+        <li>
+            The parseInt() method
+        </li>
+        <li>
+            The parseFloat() method
+        </li>
+    </ul>
+    <p>These methods are not number methods, but global JavaScript methods.</p>
+</div>
+<div class="box">
+    <h2>Global JavaScript Methods</h2>
+    <p>JavaScript global methods can be used on all JavaScript data types.</p>
+    <p>These are the most relevant methods, when working with numbers:</p>
+    <table>
+        <tr>
+          <th>Method</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Number()</td>
+          <td>Returns a number, converted from its argument.</td>
+        </tr>
+        <tr>
+          <td>parseFloat()</td>
+          <td>Parses its argument and returns a floating point number</td>
+        </tr>
+        <tr>
+          <td>parseInt()</td>
+          <td>Parses its argument and returns an integer</td>
+        </tr>
+      </table>
+</div>
+<div class="box">
+    <h2>The Number() Method</h2>
+    <p>Number() can be used to convert JavaScript variables to numbers:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+Number(true);          // returns 1
+Number(false);         // returns 0
+Number("10");          // returns 10
+Number("  10");        // returns 10
+Number("10  ");        // returns 10
+Number(" 10  ");       // returns 10
+Number("10.33");       // returns 10.33
+Number("10,33");       // returns NaN
+Number("10 33");       // returns NaN
+Number("John");        // returns NaN
+            </pre>
+            <a href="../examples/JS Numbers/13.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>If the number cannot be converted, NaN (Not a Number) is returned.</p>
+</div>
+<div class="box">
+    <h2>The Number() Method Used on Dates</h2>
+    <p>Number() can also convert a date to a number:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+Number(new Date("2017-09-30"));    // returns 1506729600000
+            </pre>
+            <a href="../examples/JS Numbers/14.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>The Number() method above returns the number of milliseconds since 1.1.1970.</p>
+</div>
+<div class="box">
+    <h2>The parseInt() Method</h2>
+    <p>parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+parseInt("10");         // returns 10
+parseInt("10.33");      // returns 10
+parseInt("10 20 30");   // returns 10
+parseInt("10 years");   // returns 10
+parseInt("years 10");   // returns NaN 
+            </pre>
+            <a href="../examples/JS Numbers/15.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>If the number cannot be converted, NaN (Not a Number) is returned.</p>
+</div>
+<div class="box">
+    <h2>The parseFloat() Method</h2>
+    <p>parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+parseFloat("10");        // returns 10
+parseFloat("10.33");     // returns 10.33
+parseFloat("10 20 30");  // returns 10
+parseFloat("10 years");  // returns 10
+parseFloat("years 10");  // returns NaN 
+            </pre>
+            <a href="../examples/JS Numbers/16.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>If the number cannot be converted, NaN (Not a Number) is returned.</p>
+</div>
+<div class="box">
+    <h2>Number Properties</h2>
+    <table>
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>MAX_VALUE</td>
+          <td>Returns the largest number possible in JavaScript</td>
+        </tr>
+        <tr>
+          <td>MIN_VALUE</td>
+          <td>Returns the smallest number possible in JavaScript</td>
+        </tr>
+        <tr>
+          <td>POSITIVE_INFINITY</td>
+          <td>Represents infinity (returned on overflow)</td>
+        </tr>
+        <tr>
+            <td>NEGATIVE_INFINITY</td>
+            <td>Represents negative infinity (returned on overflow)</td>
+          </tr>
+          <tr>
+            <td>NaN</td>
+            <td>Represents a "Not-a-Number" value</td>
+          </tr>
+      </table>
+</div>
+<div class="box">
+    <h2>JavaScript MIN_VALUE and MAX_VALUE</h2>
+    <p>MAX_VALUE returns the largest possible number in JavaScript.</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = Number.MAX_VALUE;
+            </pre>
+            <a href="../examples/JS Numbers/17.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>MIN_VALUE returns the lowest possible number in JavaScript.</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = Number.MIN_VALUE;
+                </pre>
+                <a href="../examples/JS Numbers/18.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+</div>
+<div class="box">
+    <h2>JavaScript POSITIVE_INFINITY</h2>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = Number.POSITIVE_INFINITY;
+            </pre>
+            <a href="../examples/JS Numbers/19.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>POSITIVE_INFINITY is returned on overflow:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = 1 / 0;
+                </pre>
+                <a href="../examples/JS Numbers/20.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+</div>
+<div class="box">
+    <h2>JavaScript NEGATIVE_INFINITY</h2>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = Number.NEGATIVE_INFINITY;
+            </pre>
+            <a href="../examples/JS Numbers/21.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+        <p>NEGATIVE_INFINITY is returned on overflow:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = -1 / 0;
+                </pre>
+                <a href="../examples/JS Numbers/21.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+</div>
+<div class="box">
+    <h2>Number Properties Cannot be Used on Variables</h2>
+    <p>Number properties belongs to the JavaScript's number object wrapper called Number.</p>
+    <p>These properties can only be accessed as Number.MAX_VALUE.</p>
+    <p>Using myNumber.MAX_VALUE, where myNumber is a variable, expression, or value, will return undefined:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 6;
+var y = x.MAX_VALUE;    // y becomes undefined
+            </pre>
+            <a href="../examples/JS Numbers/22.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    </div>
+</body>
+
+</html>

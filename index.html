@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/jslogo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Crimson+Text:ital@1&family=Montserrat&display=swap"
+    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Trirong&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Learn JavaScript</title>
+</head>
+
+<body>
+    <section id="container">
+        <section id="header">
+            <img src="./images/jslogo.jpg" alt="NotFound">
+            <div id="box">
+                <h1>JavaScript Tutorial</h1>
+                <h3>The Language for Web</h3>
+            </div>
+        </section>
+        <section id="Hnav">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./Navigation/What's New/What's New.html">New Topics</a></li>
+                <li><a href="./Navigation/Assignments.html">Assignments</a></li>
+                <li><a href="./Quizes/index.html">Quizes</a></li>
+                <li><a href="./Navigation/Creators.html">Developers</a></li>
+                <li><a href="./Navigation/Contact Us.html">ContactUs</a></li>
+                <!-- <li><button onclick="manoj()"></button></li> -->
+            </ul>
+        </section>
+        <section id="subContainer">
+            <div id="Vnav">
+                <h1 style="text-align: center;margin-bottom: 20px;font-size: 25px; color: rgb(13, 59, 80);">Menu</h1>
+                <div class="heading">
+                    <h2>JavaScript Basic</h2>
+                    <ul>
+                        <li class="stay" onclick="Home(),load()"><a href="#" >JS Home</a></li>
+                        <li class="stay" onclick="Intro(),load()"><a href="#">JS Introduction</a></li>
+                        <li class="stay" onclick="Whereto(),load()"><a href="#" >JS Whereto</a></li>
+                        <li class="stay" onclick="Func(),load()"><a href="#" >JS Functions</a></li>
+                        <li class="stay" onclick="Statement(),load()"><a href="#" >JS Statements</a></li>
+                        <li class="stay" onclick="Comments(),load()"><a href="#" >JS Comments</a></li>
+                        <li class="stay" onclick="Variables(),load()"><a href="#" >JS Variables</a></li>
+                        <li class="stay" onclick="Operators(),load()"><a href="#" >JS Operators</a></li>
+                        <li class="stay" onclick="Objects(),load()"><a href="#" >JS Objects</a></li>
+                        <li class="stay" onclick="Events(),load()"><a href="#" >JS Events</a></li>
+                        <li class="stay" onclick="Random(),load()"><a href="#" >JS Random</a></li>
+                        <li class="stay" onclick="Errors(),load()"><a href="#" >JS Errors</a></li>
+                        <li class="stay" onclick="Strings(),load()"><a href="#" >JS Strings</a></li>
+                        <li class="stay" onclick="Maths(),load()"><a href="#" >JS Math Object</a></li>
+                        <li class="stay" onclick="Debug(),load()"><a href="#" >JS Debugging</a></li>
+                        <li class="stay" onclick="Regexp(),load()"><a href="#" >JS Regular Expression</a></li>
+                        <li class="stay" onclick="Numbers(),load()"><a href="#" >JS Numbers</a></li>
+                        <li class="stay" onclick="Arrays(),load()"><a href="#" >JS Arrays</a></li>
+                        <li class="stay" onclick="Dates(),load()"><a href="#" >JS Dates</a></li>
+                        <li class="stay" onclick="Forms(),load()"><a href="#" >JS Forms</a></li>
+                        <li class="stay" onclick="Const(),load()"><a href="#" >JS Consts</a></li>
+                        <li class="stay" onclick="Let(),load()"><a href="#" >JS Let</a></li>
+                        <li class="stay" onclick="This(),load()"><a href="#" >JS This</a></li>
+                        <li class="stay" onclick="Loops(),load()"><a href="#" >JS Loops</a></li>
+                    </ul>
+                </div>
+                <div class="heading">
+                    <h2>JavaScript DOM</h2>
+                    <ul>
+                        <li class="stay" onclick="DIntro(),load()"><a href="#" >DOM Introduction</a></li>
+                        <li class="stay" onclick="DMethod(),load()"><a href="#">DOM Methods</a></li>
+                        <li class="stay" onclick="DDocument(),load()"><a href="#" >DOM Document</a></li>
+                        <li class="stay" onclick="DElement(),load()()"><a href="#" >DOM Elements</a></li>
+                        <li class="stay" onclick="DNav(),load()"><a href="#" >DOM Navigation</a></li>
+                        <li class="stay" onclick="DNode(),load()"><a href="#" >DOM Nodes</a></li>
+                        <li class="stay" onclick="DCollection(),load()"><a href="#" >DOM Collections</a></li>
+                        <li class="stay" onclick="DNodeList(),load()"><a href="#" >DOM Node Lists</a></li>
+                        <li class="stay" onclick="DEvent(),load()"><a href="#" >DOM Events</a></li>
+                        <li class="stay" onclick="DEventListen(),load()"><a href="#" >DOM Event Listner</a></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="displayContent">
+                <iframe id="main" src="./main pages/JSHome.html" height=94% width="100%"
+                    frameborder="0"></iframe>
+                    <div class="change">
+                        <ul>
+                            <li>
+                                <a href="#" onclick="goback()"><button class="btn">Previous</button></a>
+                            </li>
+                            <li>
+                                <button class="btn" onclick="Top()">Back to Top</button>
+                            </li>
+                            <li>
+                                <a href="#" onclick="goforward()" class="btn">Next</button></a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </section>
+        <footer>
+            <p>This website is solely made for learning purposes only. And any violations will lead to copyright infringement.</p>
+            <p id="foot"> </p>
+        </footer>
+    </section>
+    <script>
+        var foot=document.getElementById('foot');
+        var date= new Date();
+        foot.innerHTML='&copy '+date.getFullYear()+' All Rights Reserved'
+    </script>
+    <script src="./index.js"></script>
+
+</body>
+
+</html>

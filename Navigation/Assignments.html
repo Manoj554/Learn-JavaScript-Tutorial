@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>JavaScript Assignments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+   <style>
+       *{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    scroll-behavior: smooth;
+}
+#container{
+    height: 2200px;
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+}
+
+
+#header{
+    height: 100px;
+    width: 100%;
+    /* border: 2px solid; */
+    background-color: rgb(71, 24, 179);
+}
+#header img{
+    height: 90px;
+    position: absolute;
+    top: 4px;
+    left: 74px; 
+}
+#header img{
+    height: 90px;
+    position: absolute;
+    top: 4px;
+    left: 74px; 
+}
+#header #box{
+    height: 75px;
+    width: 325px;
+    position: absolute;
+    top: 14px;
+    left: 170px;
+}
+#header #box h1{
+    font-size: 2rem;
+    color: white;
+}
+#header #box h3{
+    font-size: 1.5rem;
+    color: wheat;
+}
+
+
+
+#Hnav{
+    height: 60px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    /* border: 2px solid; */
+    background-color: red;
+    z-index: 1;
+}
+#Hnav ul{
+    display: flex;
+    flex-direction: row;
+}
+#Hnav ul li{
+    list-style: none;
+    padding: 8px 15px;
+}
+#Hnav ul li a{
+    font-family: 'Baloo Bhaina 2', cursive;
+    text-decoration: none;
+    padding: 2px 15px;
+    font-size: 25px;
+}
+#Hnav ul li a:hover{
+    color: black;
+}
+
+
+
+
+#subContainer{
+   height: 2000px;
+   width: 100%;
+   /* border: 2px solid rgb(0, 0, 0); */
+   display: flex;
+   flex-direction: row;
+}
+#Vnav{
+    position: sticky;
+    top: 60px;
+    height: 800px;
+    width: 20%;
+    background-color:#d1bfd59e;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.heading{
+    margin: 10px 10px;
+    text-align: left;
+
+}
+.heading ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.heading ul li{
+    padding: 2px 10px;
+    list-style: none;
+}
+.heading ul li a{
+    font-family: 'Trirong', serif;
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(9, 9, 10);
+}
+.heading ul li:hover{
+    /* color: rgb(255, 255, 255); */
+    background-color: rgba(31, 27, 27, 0.288);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.heading ul li:hover a{
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+.displayContent{
+    height: 100%;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+}
+
+footer{
+    height: 50px;
+    background-color: #a18d8d;
+    color: whitesmoke;
+    text-align: center;
+}
+
+
+
+    
+.change{
+    height: 42px;
+    width: 100%;
+    margin: 30px 0px;
+    padding: 16px 0px;
+    background-color: rgb(228, 224, 220); 
+}
+
+.change ul{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+    padding: 2px 75px;
+   
+}
+.change ul li{
+    list-style: none;
+    padding: 0px 115px;
+   
+}
+.change #next{
+    float: right;
+    margin-right: 90px;
+}
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.btn:hover {
+    color: rgb(0, 0, 0);
+    background-color: burlywood;
+}
+.run{
+    background-color: rgb(115, 128, 4);
+}
+.box{
+    /* height: 200px; */
+    /* width: 90%; */
+    margin:  auto;
+    padding: 25px 30px;
+    border-top: 1px solid rgb(142, 148, 148);
+    border-bottom: 1px solid rgb(142, 148, 148);
+    background-color: #e9fadd;
+    font-size: 16px;
+}
+
+.active {
+    background-color: rgb(144, 146, 49);
+    
+}
+
+   </style>
+    <title>Intoduction To JavaScript</title>
+</head>
+
+<body>
+
+    <section id="Hnav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./What's New/What's New.html">New Topics</a></li>
+          <li><a href="#">Assignments</a></li>
+          <li><a href="../Quizes/index.html">Quizes</a></li>
+          <li><a href="./Creators.html">Developers</a></li>
+          <li><a href="./Contact Us.html">ContactUs</a></li>
+          <!-- <li><a href="#" onclick="Quiz()">Quizes</a></li> -->
+          <!-- <li><button onclick="manoj()"></button></li> -->
+        </ul>
+      </section>
+    <h1 id="heading" style="text-align: center;margin: 10px 20px;">Assignments</h1>
+    <br>
+    <br>
+    <br>
+
+    <h2>Basic Level</h2>
+    <br>
+    <div class="box" id="content1">
+    <p style="font-size: large;">1. Write a program to convert Celsius to Farenheit.</p>
+    <p style="font-size: large;">2. Write a program to check Prime Number.</p>
+    <p style="font-size: large;">3. Write a program to convert Decimal to Binary.</p>
+    <p style="font-size: large;">4. Write a program to sort words in alphabetical order.</p>
+    <p style="font-size: large;">5. Write a program to convert Date to Number.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2>Intermediate Level</h2>
+    <br>
+    <div class="box" id="content1">
+    <p style="font-size: large;">1. Write a program to perform function overloading.</p>
+    <p style="font-size: large;">2. Write a program to shuffle a deck of cards.</p>
+    <p style="font-size: large;">3. Write a program to display fibonacci sequence using recursion.</p>
+    <p style="font-size: large;">4. Write a program to prform intersection between two arrays.</p>
+    <p style="font-size: large;">5. Write a program to create a digital clock along with countdown timer.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2>Advanced Level</h2>
+    <br>
+    <div class="box" id="content1">
+    <p style="font-size: large;">1. Write a program to build a JavaScript Tip Calculator.</p>
+    <p style="font-size: large;">2. Write a program to build a JavaScript Map.</p>
+    <p style="font-size: large;">3. Write a program to build a JavaScript quiz.</p>
+    <p style="font-size: large;">4. Write a program to build a To-Do List.</p>
+    <p style="font-size: large;">5. Write a program to build a web assistant.</p>
+    </div>
+   
+    <script>
+
+
+        function run() {
+            
+            function StartTime() {
+                var today = new Date();
+                var hour = today.getHours();
+                var min = today.getMinutes();
+                var sec = today.getSeconds();
+
+                min = check(min);
+                sec = check(sec);
+
+                function check(s) {
+                    if (s < 10)
+                        s = '0' + s;
+                    return s;
+                }
+                document.getElementById('myjs').innerHTML = '<h1>Time is ' + hour + ":" + min + ":" + sec + "</h1>";
+            }
+            setInterval(StartTime, 1000);
+        }
+    </script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

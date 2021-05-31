@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital@1&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Intoduction To JavaScript</title>
+</head>
+
+<body>
+    <h1 id="heading" style="text-align: center;margin: 10px 20px;">JavaScript Home</h1>
+
+    <div class="box">
+        <ul type="square">
+            <li>JavaScript is the world's most popular programming language.</li>
+            <li>JavaScript is the programming language of the Web.</li>
+            <li>JavaScript is easy to learn.</li>
+            <li>This tutorial will teach you JavaScript from basic to advanced</li>
+        </ul>
+    </div>
+
+
+    <div class="box" id="content1">
+        <h2>Example in each Chapter</h2>
+        <p>With our "RUN Example" ,You can view the result</p>
+        <br>
+        <section>
+            <h4>Example</h4>
+            <br>
+            <div id="exam">
+                <h3>MY First JavaScript</h3>
+                <button onclick="run()">Click me to display Date and Time</button>
+                <div id="myjs">
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <div class="box" id="content1">
+        <h2>Use the Menu</h2>
+        <ol>
+            <li>We recommend reading this tutorial, in the sequence listed in the menu.</li>
+            <li>If you have a large screen, the menu will always be present on the left.</li>
+            <li>If you have a small screen, open the menu by clicking the top menu sign ☰.</li>
+        </ol>
+
+    </div>
+
+
+    <div class="box" id="content2">
+        <h2>Why Study JavaScript?</h2>
+        <h4>JavaScript is one of the 3 languages all web developers must learn:</h4>
+        <ol>
+            <li><strong>HTML</strong> to define the content of web pages</li>
+            <li><strong>CSS</strong> to specify the layout of web pages</li>
+            <li><strong>JavaScript</strong> to program the behavior of web pages</li>
+
+        </ol>
+    </div>
+
+
+    <div class="box" id="content3">
+        <h2>Learn by Examples</h2>
+        <ol>
+            <li>Examples are better than 1000 words. Examples are often easier to understand than text explanations.
+            </li>
+            <li>This tutorial supplements all explanations with clarifying "Run Examples" examples.</li>
+        </ol>
+
+    </div>
+    <div class="box" id="content4">
+        <h2>Learning Speed
+        </h2>
+        <ol>
+            <li>In this tutorial, the learning speed is your choice.</li>
+            <li>Everything is up to you.</li>
+            <li>If you are struggling, take a break, or re-read the material.</li>
+            <li>Always make sure you understand all the "Run-Examples" examples.</li>
+            <li>The only way to become a clever programmer is to: Practice. Practice. Practice. Code. Code. Code !</li>
+        </ol>
+
+    </div>
+    <script>
+
+
+        function run() {
+            
+            function StartTime() {
+                var today = new Date();
+                var hour = today.getHours();
+                var min = today.getMinutes();
+                var sec = today.getSeconds();
+
+                min = check(min);
+                sec = check(sec);
+
+                function check(s) {
+                    if (s < 10)
+                        s = '0' + s;
+                    return s;
+                }
+                document.getElementById('myjs').innerHTML = '<h1>Time is ' + hour + ":" + min + ":" + sec + "</h1>";
+            }
+            setInterval(StartTime, 1000);
+        }
+    </script>
+    <script src="../index.js"></script>
+</body>
+
+</html>

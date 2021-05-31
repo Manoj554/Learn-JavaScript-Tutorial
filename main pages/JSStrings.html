@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Strings</title>
+    <style>table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }</style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Strings</h1>
+
+    <div class="box">
+        <h2>JavaScript Strings</h2>
+        <p>JavaScript strings are used for storing and manipulating text.</p>
+        <p>A JavaScript string is zero or more characters written inside quotes.</p>
+        <p>You can use single or double quotes.</p>
+        <p>You can use quotes inside a string, as long as they don't match the quotes surrounding the string.</p>
+     
+
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "John Doe";
+var carName2 = 'Volvo XC60';
+var answer1 = "It's alright";
+var answer2 = "He is called 'Johnny'";
+var answer3 = 'He is called "Johnny"';
+                </pre>
+            </section>
+        </div>
+    </div>
+
+   
+
+    <div class="box">
+        <h2>String Length</h2>
+        <p>To find the length of a string, use the built-in length property:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var sln = txt.length;
+                </pre>
+                <a href="../examples/JSStrings/1.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Escape Character</h2>
+        <p>Because strings must be written within quotes, JavaScript will misunderstand this string:</p>
+        <div>
+            <section>
+                <pre>
+var x = "We are the so-called "Vikings" from the north.";
+                </pre>
+            </section>
+        </div>
+        <p>The string will be chopped to "We are the so-called ".</p>
+        <p>The solution to avoid this problem, is to use the backslash escape character.</p>
+        <p>The backslash (\) escape character turns special characters into string characters:</p>
+        <table>
+            <tr>
+              <th>Code</th>
+              <th>Result</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>\'</td>
+              <td>'</td>
+              <td>Single quote</td>
+            </tr>
+            <tr>
+              <td>\"</td>
+              <td>"</td>
+              <td>Double quote</td>
+            </tr>
+            <tr>
+              <td>\\</td>
+              <td>\</td>
+              <td>Backslash</td>
+            </tr>
+          </table>
+          <p>Six other escape sequences are valid in JavaScript:</p>
+          <table>
+            <tr>
+              <th>Code</th>
+              <th>Result</th>
+            </tr>
+            <tr>
+              <td>\b</td>
+              <td>Backspace</td>
+            </tr>
+            <tr>
+              <td>\f</td>
+              <td>Form Feed</td>
+            </tr>
+            <tr>
+              <td>\n</td>
+              <td>New Line</td>
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>Carriage Return</td>
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>Carriage Return</td>
+            </tr>
+            <tr>
+                <td>\t</td>
+                <td>Horizontal Tabulator</td>
+              </tr>
+              <tr>
+                <td>\v</td>
+                <td>Vertical Tabulator</td>
+              </tr>
+          </table>
+          <p>The 6 escape characters above were originally designed to control typewriters, teletypes, and fax machines. They do not make any sense in HTML.</p>
+    </div>
+
+    <div class="box">
+        <h2>Breaking Long Code Lines</h2>
+        <p>For best readability, programmers often like to avoid code lines longer than 80 characters.</p>
+        <p>If a JavaScript statement does not fit on one line, the best place to break it is after an operator:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+document.getElementById("demo").innerHTML =
+"Hello Dolly!";
+                </pre>
+                <a href="../examples/JSStrings/2.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+            <p>The best way to break up a string is to use string addition:</p>
+            <p>Example :- </p>
+            <section>
+                <pre>
+document.getElementById("demo").innerHTML = "Hello " +
+"Dolly!";
+                </pre>
+                <a href="../examples/JSStrings/3.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+
+        </div>
+    </div>
+    <div class="box">
+        <h2>Strings Can be Objects</h2>
+        <p>Normally, JavaScript strings are primitive values, created from literals:</p>
+        <p style="color: red;">var firstName = "John";</p>
+        <p>But strings can also be defined as objects with the keyword new:</p>
+        <p style="color: red;">var firstName = new String("John");</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "John";
+var y = new String("John");
+
+<p style="color: green;">// typeof x will return string
+// typeof y will return object</p>
+                </pre>
+                <a href="../examples/JSStrings/4.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+            <p>When using the == operator, equal strings are equal:</p>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "John";             
+var y = new String("John");
+
+<p style="color: green;">// (x == y) is true because x and y have equal values</p>
+                </pre>
+                <a href="../examples/JSStrings/5.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+            <p>When using the === operator, equal strings are not equal, because the === operator expects equality in both type and value.</p>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = "John";             
+var y = new String("John");
+
+<p style="color: green;">// (x === y) is false because x and y have different types (string and object)</p>
+                </pre>
+                <a href="../examples/JSStrings/6.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+            <p>Comparing two JavaScript objects will always return false.</p>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = new String("John");             
+var y = new String("John");
+
+<p style="color: green;">// (x === y) is false because x and y are different objects</p>
+                </pre>
+                <a href="../examples/JSStrings/7.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+
+        </div>
+    </div>
+        <div class="box">
+            <h2>Finding a String in a String</h2>
+            <p>The indexOf() method returns the index of (the position of) the first occurrence of a specified text in a string:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+                    </pre>
+                    <a href="../examples/JSStrings/8.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>JavaScript counts positions from zero.</p>
+            <p>0 is the first position in a string, 1 is the second, 2 is the third ...</p>
+            <p>The lastIndexOf() method returns the index of the last occurrence of a specified text in a string:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.lastIndexOf("locate");
+                    </pre>
+                    <a href="../examples/JSStrings/9.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>Both indexOf(), and lastIndexOf() return -1 if the text is not found.</p>
+            <p>Both methods accept a second parameter as the starting position for the search:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate", 15);
+                    </pre>
+                    <a href="../examples/JSStrings/10.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>The lastIndexOf() methods searches backwards (from the end to the beginning), meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of the string.</p>
+        </div>
+        <div class="box">
+            <h2>Searching for a String in a String</h2>
+            <p>The search() method searches a string for a specified value and returns the position of the match:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+                    </pre>
+                    <a href="../examples/JSStrings/11.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div>
+            <h2>Did You Notice?</h2>
+            <p>The two methods, indexOf() and search(), are equal?</p>
+            <p>They accept the same arguments (parameters), and return the same value?</p>
+            <p>The two methods are NOT equal. These are the differences:</p>
+            <p><ul>
+                <li>
+                    The search() method cannot take a second start position argument.
+                </li>
+                <li>
+                    The indexOf() method cannot take powerful search values (regular expressions).
+                </li>
+            </ul></p>
+        </div>
+        <div class="box">
+            <h2>Extracting String Parts</h2>
+            <p>There are 3 methods for extracting a part of a string:</p>
+            <p><ul>
+                <li>
+                    slice(start, end)
+                </li>
+                <li>
+                    substring(start, end)
+                </li>
+                <li>
+                    substr(start, length)
+                </li>
+            </ul></p>
+        </div>
+            <div class="box">
+                <h2>The slice() Method</h2>
+                <p>slice() extracts a part of a string and returns the extracted part in a new string.</p>
+                <p>The method takes 2 parameters: the start position, and the end position (end not included).</p>
+                <p>This example slices out a portion of a string from position 7 to position 12 (13-1):</p>
+                <div>
+                    <p>Example :- </p>
+                    <section>
+                        <pre>
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+
+The result of res will be:
+Banana
+                        </pre>
+
+                    </section>
+                </div>
+                <p>If a parameter is negative, the position is counted from the end of the string.</p>
+                <p>This example slices out a portion of a string from position -12 to position -6:</p>
+                <div>
+                    <p>Example :- </p>
+                    <section>
+                        <pre>
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(-12, -6);
+
+The result of res will be:
+Banana
+                        </pre>
+
+                    </section>
+                </div>
+                <p>If you omit the second parameter, the method will slice out the rest of the string.</p>
+            </div>
+            <div class="box">
+                <h2>The substring() Method</h2>
+                <p>substring() is similar to slice().</p>
+                <p>The difference is that substring() cannot accept negative indexes.</p>
+                <div>
+                    <p>Example :- </p>
+                    <section>
+                        <pre>
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+
+The result of res will be:
+Banana
+                        </pre>
+
+                    </section>
+                </div>
+                </div>
+                <div class="box">
+                    <h2>The substr() Method</h2>
+                    <p>substr() is similar to slice().</p>
+                    <p>The difference is that the second parameter specifies the length of the extracted part.</p>
+                    <div>
+                        <p>Example :- </p>
+                        <section>
+                            <pre>
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+    
+    The result of res will be:
+    Banana
+                            </pre>
+    
+                        </section>
+                    </div>
+                    <p>If you omit the second parameter, substr() will slice out the rest of the string.</p>
+                    <p>If the first parameter is negative, the position counts from the end of the string.</p>
+                </div>
+        </div>
+        <div class="box">
+            <h2>Replacing String Content</h2>
+            <p>The replace() method replaces a specified value with another value in a string:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+                    </pre>
+                    <a href="../examples/JSStrings/12.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>The replace() method does not change the string it is called on. It returns a new string.</p>
+            <p>By default, the replace() method replaces only the first match.</p>
+            <p>By default, the replace() method is case sensitive. Writing MICROSOFT (with upper-case) will not work.</p>
+            <p>To replace case insensitive, use a regular expression with an /i flag (insensitive):</p>
+        </div>
+        <div class="box">
+            <h2>Converting to Upper and Lower Case</h2>
+            <p>A string is converted to upper case with toUpperCase():</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var text1 = "Hello World!";       // String
+var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+                    </pre>
+                    <a href="../examples/JSStrings/13.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>A string is converted to lower case with toLowerCase():</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var text1 = "Hello World!";       // String
+var text2 = text1.toLowerCase();  // text2 is text1 converted to lower
+                    </pre>
+                    <a href="../examples/JSStrings/14.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>The concat() Method</h2>
+            <p>concat() joins two or more strings:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+                    </pre>
+                    <a href="../examples/JSStrings/15.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            <p>The concat() method can be used instead of the plus operator. These two lines do the same:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var text = "Hello" + " " + "World!";
+var text = "Hello".concat(" ", "World!");
+                    </pre>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <p>All string methods return a new string. They don't modify the original string.</p>
+            <p>Formally said: Strings are immutable: Strings cannot be changed, only replaced.</p>
+        </div>
+        <div class="box">
+            <h2>String.trim()</h2>
+            <p>The trim() method removes whitespace from both sides of a string:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var str = "       Hello World!        ";
+alert(str.trim());
+                    </pre>
+                    <a href="../examples/JSStrings/16.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>JavaScript String Padding</h2>
+            <p>ECMAScript 2017 added two String methods: padStart and padEnd to support padding at the beginning and at the end of a string.</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+let str = "5";
+str = str.padStart(4,0);
+// result is 0005
+                    </pre>
+                </section>
+            </div>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+let str = "5";
+str = str.padEnd(4,0);
+// result is 5000
+                    </pre>
+                </section>
+            </div>
+        </div>
+        <div class="box">
+            <h2>Extracting String Characters</h2>
+            <p>There are 3 methods for extracting string characters:</p>
+            <p><ul>
+                <li>
+                    charAt(position)
+                </li>
+                <li>
+                    charCodeAt(position)
+                </li>
+                <li>
+                    Property access [ ]
+                </li>
+            </ul></p>
+        </div>
+        <div class="box">
+            <h2>The charAt() Method</h2>
+            <p>The charAt() method returns the character at a specified index (position) in a string:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var str = "HELLO WORLD";
+str.charAt(0);            // returns H
+                    </pre>
+                    <a href="../examples/JSStrings/17.html" target="_blank"><button class="btn run">Run
+                            Example</button></a>
+                </section>
+            </div>
+            </div>
+            <div class="box">
+                <h2>The charCodeAt() Method</h2>
+                <p>The charCodeAt() method returns the unicode of the character at a specified index in a string:</p>
+                <p>The method returns a UTF-16 code (an integer between 0 and 65535).</p>
+                <div>
+                    <p>Example :- </p>
+                    <section>
+                        <pre>
+var str = "HELLO WORLD";
+
+str.charCodeAt(0);         // returns 72
+                        </pre>
+                        <a href="../examples/JSStrings/18.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                    </section>
+                </div>
+            </div>
+                <div class="box">
+                    <h2>Property Access</h2>
+        
+                    <p>ECMAScript 5 (2009) allows property access [ ] on strings:
+
+                    </p>
+                    <div>
+                        <p>Example :- </p>
+                        <section>
+                            <pre>
+var str = "HELLO WORLD";
+str[0];                   // returns H
+                            </pre>
+                            <a href="../examples/JSStrings/19.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+                        <p>Property access might be a little unpredictable:</p>
+                        <p><ul>
+                            <li>
+                                It does not work in Internet Explorer 7 or earlier
+                            </li>
+                            <li>
+                                It makes strings look like arrays (but they are not)
+                            </li>
+                            <li>
+                                If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+                            </li>
+                            <li>
+                                It is read only. str[0] = "A" gives no error (but does not work!)
+                            </li>
+                        </ul></p>
+                    </div>
+                </div>
+                    <div class="box">
+                        <h2>Converting a String to an Array</h2>
+                        <p>A string can be converted to an array with the split() method:</p>
+                        <div>
+                            <p>Example :- </p>
+                            <section>
+                                <pre>
+var txt = "a,b,c,d,e";   // String
+txt.split(",");          // Split on commas
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+                                </pre>
+                            </section>
+                        </div>
+                        <P>If the separator is omitted, the returned array will contain the whole string in index [0].</P>
+                        <p>If the separator is "", the returned array will be an array of single characters:</p>
+                        <div>
+                            <p>Example :- </p>
+                            <section>
+                                <pre>
+var txt = "Hello";       // String
+txt.split("");           // Split in characters
+                                </pre>
+                            </section>
+                        </div>
+                    </div>
+    </div>
+
+</body>
+
+</html>

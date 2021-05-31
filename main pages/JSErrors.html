@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Errors</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Errors - Throw and Try to Catch</h1>
+    <div class="box">
+        <p>The <mark>try</mark> statement lets you test a block of code for errors.</p>
+        <p>The <mark>catch</mark> statement lets you handle the error.</p>
+        <p>The <mark>throw</mark> statement lets you create custom errors.</p>
+        <p>The <mark>finally</mark> statement les you execute code, after try and catch, regardless of the result.</p>
+
+    </div>
+    <div class="box">
+        <h1>Errors Will Happen!</h1>
+        <p>When executing JavaScript code, different errors can occur.</p>
+        <p>Errors can be coding errors made by the programmer, errors due to wrong input, and other unforeseeable things.</p>
+        <div>
+            <p>Example:<br>In this example we have written alert as adddlert to deliberately produce an error:</p>
+                        <section>
+                            <pre>
+&lt;p id="demo"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+try {
+    adddlert("Welcome guest!");
+}
+catch(err) {
+    document.getElementById("demo").innerHTML = err.message;
+}
+&lt;/script>&gt; 
+                            </pre>
+                            <a href="../examples/JSErrors/example1.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+        <p>JavaScript catches <strong>adddlert</strong> as an error, and executes the catch code to handle it.</p>
+    </div>
+    <div class="box">
+        
+        <h1>JavaScript try and catch</h1>
+        <p>The <mark>try</mark> statement allows you to define a block of code to be tested for errors while it is being executed.</p>
+        <p>The <mark>catch</mark> statement allows you to define a block of code to be executed, if an error occurs in the try block.</p>
+        <p>The JavaScript statements <mark>try</mark> and <mark>catch</mark> come in pairs:</p>
+        <div>
+            
+                        <section>
+                            <pre>
+try {
+    Block of code to try
+}
+catch(err) {
+    Block of code to handle errors
+}
+                            </pre>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>JavaScript Throws Errors</h1>
+        <p>When an error occurs, JavaScript will normally stop and generate an error message.</p>
+        <p>The technical term for this is: JavaScript will <b>throw an exception (throw an error)</b>.</p>
+        <p>JavaScript will actually create an <b>Error object</b> with two properties: <b>name</b> and <b>message</b>.</p>
+    </div>
+    <div class="box">
+        
+        <h1>The throw Statement</h1>
+        <p>The <mark>throw</mark> statement allows you to create a custom error.</p>
+        <p>Technically you can <b>throw an exception (throw an error)</b>.</p>
+        <p>The exception can be a JavaScript <mark>String</mark>, a <mark>Number</mark>, a <mark>Boolean</mark> or an <mark>Object</mark>:</p>
+        <div>
+            
+                        <section>
+                            <pre>
+throw "Too big";    // throw a text
+throw 500;          // throw a number
+                            </pre>
+                        </section>
+        </div>
+        <p>If you use <mark>throw</mark> together with <mark>try</mark> and <mark>catch</mark>, you can control program flow and generate custom error messages.</p>
+    </div>
+    <div class="box">
+        <h1>Input Validation Example</h1>
+        <p>This example examines input. If the value is wrong, an exception (err) is thrown.</p>
+        <p>The exception (err) is caught by the catch statement and a custom error message is displayed:</p>
+        <div> 
+            <section>
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+                    
+&lt;p>Please input a number between 5 and 10:&lt;/p&gt;
+                    
+&lt;input id="demo" type="text"&gt;
+&lt;button type="button" onclick="myFunction()">Test Input&lt;/button&gt;
+&lt;p id="p01"&gt;&lt;/p&gt;
+                    
+&lt;script>
+function myFunction() {
+var message, x;
+message = document.getElementById("p01");
+message.innerHTML = "";
+x = document.getElementById("demo").value;
+try {
+    if(x == "") throw "empty";
+    if(isNaN(x)) throw "not a number";
+    x = Number(x);
+    if(x &lt; 5) throw "too low";
+    if(x &gt; 10) throw "too high";
+    }
+catch(err) {
+    message.innerHTML = "Input is " + err;
+    }
+}
+&lt;/script&gt;
+                    
+&lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+                <a href="../examples/JSErrors/example2.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>HTML Validation</h1>
+        <p>The code above is just an example.</p>
+        <p>Modern browsers will often use a combination of JavaScript and built-in HTML validation, using predefined validation rules defined in HTML attributes:</p>
+        <div> 
+            <section>
+                <pre>
+&lt;input id="demo" type="number" min="5" max="10" step="1"&gt;
+                </pre>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>The finally Statement</h1>
+        <p>The <mark>finally</mark> statement lets you execute code, after try and catch, regardless of the result:</p>
+        <div>
+            <p>Syntax:</p>
+                        <section>
+                            <pre>
+try {
+    Block of code to try
+    }
+catch(err) {
+    Block of code to handle errors
+    }
+finally {
+    Block of code to be executed regardless of the try / catch result
+    } 
+                            </pre>
+       
+                        </section>
+        </div>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+function myFunction() {
+    var message, x;
+    message = document.getElementById("p01");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try {
+        if(x == "") throw "is empty";
+        if(isNaN(x)) throw "is not a number";
+        x = Number(x);
+        if(x &gt; 10) throw "is too high";
+        if(x &lt; 5) throw "is too low";
+        }
+    catch(err) {
+        message.innerHTML = "Error: " + err + ".";
+        }
+    finally {
+        document.getElementById("demo").value = "";
+        }
+}
+                            </pre>
+                            <a href="../examples/JSErrors/example3.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>The Error Object</h1>
+        <p>JavaScript has a built in error object that provides error information when an error occurs.</p>
+        <p>The error object provides two useful properties: name and message.</p>
+    </div>
+    <div class="box">
+        <h1>Error Object Properties</h1>
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black" >
+            <thead>
+                <th>Property</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>name</td>
+                <td>Sets or returns an error name</td>
+            </tr>
+            <tr>
+                <td>message</td>
+                <td>Sets or returns an error message (a string)</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="box">
+        <h1> Error Name Values</h1>
+        <p>Six different values can be returned by the error name property:</p>
+
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black" >
+            <thead>
+                <th>Property</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>EvalError</td>
+                <td>An error has occurred in the eval() function</td>
+            </tr>
+            <tr>
+                <td>RangeError</td>
+                <td>A number "out of range" has occurred</td>
+            </tr>
+            <tr>
+                <td>ReferenceError</td>
+                <td>An illegal reference has occurred</td>
+            </tr>
+            <tr>
+                <td>SyntaxError</td>
+                <td>A syntax error has occurred</td>
+            </tr>
+            <tr>
+                <td>TypeError</td>
+                <td>A type error has occurred</td>
+            </tr>
+            <tr>
+                <td>URIError</td>
+                <td>An error in encodeURI() has occurred</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="box">
+       <h1>Eval Error</h1>
+        <p>An <mark>EvalError</mark> indicates an error in the eval() function.</p>
+    </div>
+    <div class="box">
+       <h1> Range Error</h1>
+        <p>A <mark>RangeError</mark> is thrown if you use a number that is outside the range of legal values.</p>
+        <p>For example: You cannot set the number of significant digits of a number to 500.</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+var num = 1;
+try {
+    num.toPrecision(500);   // A number cannot have 500 significant digits
+    }
+catch(err) {
+    document.getElementById("demo").innerHTML = err.name;
+    }
+
+                            </pre>
+                            <a href="../examples/JSErrors/example4.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    
+    </div>
+    <div class="box">
+        <h1>Reference Error</h1>
+        <p>A <mark>ReferenceError</mark> is thrown if you use (reference) a variable that has not been declared:</p>
+         <div>
+             <p>Example:</p>
+                         <section>
+                             <pre>
+var x;
+try {
+    x = y + 1;   // y cannot be referenced (used)
+    }
+catch(err) {
+    document.getElementById("demo").innerHTML = err.name;
+    }
+                             </pre>
+                             <a href="../examples/JSErrors/example5.html" target="_blank"><button class="btn run">Run
+                                 Example</button></a>
+                         </section>
+         </div>
+     
+     </div>
+     <div class="box">
+        <h1>Syntax Error</h1>
+        <p>A <mark>SyntaxError</mark> is thrown if you try to evaluate code with a syntax error.</p>
+        
+         <div>
+             <p>Example:</p>
+                         <section>
+                             <pre>
+try {
+    eval("alert('Hello)");   // Missing ' will produce an error
+    }
+catch(err) {
+    document.getElementById("demo").innerHTML = err.name;
+    }
+                             </pre>
+                             <a href="../examples/JSErrors/example6.html" target="_blank"><button class="btn run">Run
+                                 Example</button></a>
+                         </section>
+         </div>
+     
+     </div>
+     <div class="box">
+        <h1>Type Error</h1>
+        <p>A <mark>TypeError</mark> is thrown if you use a value that is outside the range of expected types:</p>
+         <div>
+             <p>Example:</p>
+                         <section>
+                             <pre>
+var num = 1;
+try {
+    num.toUpperCase();   // You cannot convert a number to upper case
+    }
+catch(err) {
+document.getElementById("demo").innerHTML = err.name;
+    }
+                             </pre>
+                             <a href="../examples/JSErrors/example7.html" target="_blank"><button class="btn run">Run
+                                 Example</button></a>
+                         </section>
+         </div>
+     
+     </div>
+     <div class="box">
+        <h1>URI (Uniform Resource Identifier) Error</h1>
+        <p>A <mark>URIError</mark> is thrown if you use illegal characters in a URI function:</p>
+         <div>
+             <p>Example:</p>
+                         <section>
+                             <pre>
+try {
+    decodeURI("%%%");   // You cannot URI decode percent signs
+    }
+catch(err) {
+    document.getElementById("demo").innerHTML = err.name;
+    }
+                             </pre>
+                             <a href="../examples/JSErrors/example8.html" target="_blank"><button class="btn run">Run
+                                 Example</button></a>
+                         </section>
+         </div>
+     
+     </div>
+    <div class="box">
+        <h1>Non-Standard Error Object Properties</h1>
+        <p>Mozilla and Microsoft defines some non-standard error object properties:</p>
+        fileName (Mozilla)<br>
+        lineNumber (Mozilla)<br>
+        columnNumber (Mozilla)<br>
+        stack (Mozilla)<br>
+        description (Microsoft)<br>
+        number (Microsoft)<br>
+        <p>Do not use these properties in public web sites. They will not work in all browsers.</p>
+    </div>
+    </body>
+    </html>

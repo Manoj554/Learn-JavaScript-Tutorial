@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Debugging</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Debugging</h1>
+    <div class="box">
+        <h1>Code Debugging</h1>
+        <p>Programming code might contain syntax errors, or logical errors.</p>
+        <p>Many of these errors are difficult to diagnose.</p>
+        <p>Often, when programming code contains errors, nothing will happen. There are no error messages, and you will get no indications where to search for errors.</p>
+        <p>Searching for (and fixing) errors in programming code is called code debugging.</p>
+    </div>
+    <div class="box">
+        <h1>JavaScript Debuggers</h1>
+        <p>Debugging is not easy. But fortunately, all modern browsers have a built-in JavaScript debugger.</p>
+        <p>Built-in debuggers can be turned on and off, forcing errors to be reported to the user.</p>
+        <p>With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.</p>
+        <p>Normally, otherwise follow the steps at the bottom of this page, you activate debugging in your browser with the F12 key, and select "Console" in the debugger menu.</p>
+    </div>
+    <div class="box">
+        <h1>The console.log() Method</h1>
+        <p>If your browser supports debugging, you can use <mark>console.log()</mark> to display JavaScript values in the debugger window:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Web Page&lt;/h1&gt;
+
+&lt;script&gt;
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                            </pre>      
+                            <a href="../examples/JSDebugging/example1.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Setting Breakpoints</h1>
+        <p>In the debugger window, you can set breakpoints in the JavaScript code.</p>
+        <p>At each breakpoint, JavaScript will stop executing, and let you examine JavaScript values.</p>
+        <p>After examining values, you can resume the execution of code (typically with a play button).</p>
+    </div>
+    <div class="box">
+        <h1>The debugger Keyword</h1>
+        <p>The <mark>debugger</mark> keyword stops the execution of JavaScript, and calls (if available) the debugging function.</p>
+        <p>This has the same function as setting a breakpoint in the debugger.</p>
+        <p>If no debugging is available, the debugger statement has no effect.</p>
+        <p>With the debugger turned on, this code will stop executing before it executes the third line.</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+var x = 15 * 5;
+debugger;
+document.getElementById("demo").innerHTML = x;
+                            </pre>
+                            <a href="../examples/JSDebugging/example2.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Major Browsers' Debugging Tools</h1>
+        <p>Normally, you activate debugging in your browser with F12, and select "Console" in the debugger menu.</p>
+        <p>Otherwise follow these steps:</p>
+        <h2>Chrome</h2>
+        <ul>
+            <li>Open the browser.</li>
+            <li>From the menu, select "More tools".</li>
+            <li>From tools, choose "Developer tools".</li>
+            <li>Finally, select Console.</li>
+        </ul>
+        <h2>Firefox</h2>
+        <ul>
+            <li>Open the browser.</li>
+            <li>From the menu, select "Web Developer".</li>
+            <li>Finally, select "Web Console".</li>
+        </ul>
+        <h2>Edge</h2>
+        <ul>
+            <li>Open the browser.</li>
+            <li>From the menu, select "Developer Tools".</li>
+            <li>Finally, select "Console".</li>
+        </ul>
+        <h2>Opera</h2>
+        <ul>
+            <li>Open the browser.</li>
+            <li>From the menu, select "Developer".</li>
+            <li>From "Developer", select "Developer tools".</li>
+            <li>Finally, select "Console".</li>
+        </ul>
+        <h2>Safari</h2>
+        <ul>
+            <li>Go to Safari, Preferences, Advanced in the main menu.</li>
+            <li>Check "Enable Show Develop menu in menu bar".</li>
+            <li>When the new option "Develop" appears in the menu: Choose "Show Error Console".</li>
+        </ul>
+    </div>
+    </body>
+    </html>

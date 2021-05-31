@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Nodes</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="heading">JavaScript HTML DOM Elements (Nodes)
+    </h1>
+    <div class="box">
+        <p>Adding and Removing Nodes (HTML Elements)</p>
+        <h2>Creating New HTML Elements (Nodes)</h2>
+        <p>To add a new element to the HTML DOM, you must create the element (element node) first, and then append it to an existing element.</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &ltdiv id="div1">
+        &ltp id="p1">This is a paragraph.&lt/p>
+        &ltp id="p2">This is another paragraph.&lt/p>
+    &lt/div>
+                      
+    &ltscript>
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+                      
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+    &lt/script>
+                </pre>
+                <a href="./examples/domnodes/1.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <h3>Example Explained </h3>
+
+        <p>This code creates a new &ltp> element:</p>
+        <p style="border: 1px soild black;background-color: rgb(145, 211, 255);background-color: rgb(145, 211, 255);">var para = document.createElement("p");</p>
+
+        <p>To add text to the &ltp> element, you must create a text node first. This code creates a text node:</p>
+        <p style="border: 1px soild black;background-color: rgb(145, 211, 255);">var node = document.createTextNode("This is a new paragraph.");</p>
+
+        <p>Then you must append the text node to the &ltp> element:</p>
+        <p style="border: 1px soild black;background-color: rgb(145, 211, 255);">para.appendChild(node);</p>
+        <p>Finally you must append the new element to an existing element.</p>
+
+        <p>This code finds an existing element:</p>
+        <p style="border: 1px soild black;background-color: rgb(145, 211, 255);">var element = document.getElementById("div1");</p>
+
+        <p>This code appends the new element to the existing element:</p>
+        <p style="border: 1px soild black;background-color: rgb(145, 211, 255);">element.appendChild(para);</p>
+
+    </div>
+
+    <div class="box">
+        <h2>Creating new HTML Elements - insertBefore()</h2>
+        <p>The appendChild() method in the previous example, appended the new element as the last child of the parent.</p>
+        <p>If you don't want that you can use the insertBefore() method:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &ltdiv id="div1">
+        &ltp id="p1">This is a paragraph.&lt/p>
+        &ltp id="p2">This is another paragraph.&lt/p>
+    &lt/div>
+                      
+    &ltscript>
+      var para = document.createElement("p");
+      var node = document.createTextNode("This is new.");
+      para.appendChild(node);
+                      
+      var element = document.getElementById("div1");
+      var child = document.getElementById("p1");
+      element.insertBefore(para, child);
+    &lt/script>
+                </pre>
+                <a href="./examples/domnodes/2.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Removing Existing HTML Elements</h2>
+        <p>To remove an HTML element, use the remove() method:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &ltdiv>
+        &ltp id="p1">This is a paragraph.&lt/p>
+        &ltp id="p2">This is another paragraph.&lt/p>
+    &lt/div>
+                      
+    &ltscript>
+      var elmnt = document.getElementById("p1");
+      elmnt.remove();
+    &lt/script>
+                </pre>
+                <a href="./examples/domnodes/3.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+
+        <h3>Example Explained </h3>
+        <p>The HTML document contains a &ltdiv> element with two child nodes (two &ltp> elements):</p>
+        <pre style="border: 1px solid black;background-color: white;">
+            &ltdiv>
+                &ltp id="p1">This is a paragraph.&lt/p>
+                &ltp id="p2">This is another paragraph.&lt/p>
+            &lt/div>
+        </pre>
+
+        <p>Find the element you want to remove:</p>
+        <p style="border: 1px solid black; background-color: rgb(138, 218, 255);">var elmnt = document.getElementById("p1");</p>
+
+        <p>Then execute the remove() method on that element:</p>
+        <p style="border: 1px solid black; background-color: rgb(146, 218, 255);">elmnt.remove();</p>
+
+        <div style="background-color: rgb(226, 206, 154);">
+            <p>The remove() method does not work in older browsers, see the example below on how to use removeChild() instead.</p>
+    
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Removing a Child Node</h2>
+        <p>For browsers that does not support the remove() method, you have to find the parent node to remove an element:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &ltdiv id="div1">
+        &ltp id="p1">This is a paragraph.&lt/p>
+        &ltp id="p2">This is another paragraph.&lt/p>
+    &lt/div>
+                      
+    &ltscript>
+      var parent = document.getElementById("div1");
+      var child = document.getElementById("p1");
+      parent.removeChild(child);
+    &lt/script>
+                </pre>
+                <a href="./examples/domnodes/4.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+
+        <h3>Example Explained </h3>
+        <p>This HTML document contains a &ltdiv> element with two child nodes (two &ltp> elements):</p>
+
+        <pre style="border: 1px solid;background-color: white;">
+            &ltdiv id="div1">
+                &ltp id="p1">This is a paragraph.&lt/p>
+                &ltp id="p2">This is another paragraph.&lt/p>
+            &lt/div>
+        
+        </pre>
+        <p>Find the element with id="div1":</p>
+        <p style="border: 1px solid black;background-color: aqua;">var parent = document.getElementById("div1");</p>
+
+        <p>Find the &ltp> element with id="p1":</p>
+        <p style="border: 1px solid black;background-color: aqua;">var child = document.getElementById("p1");</p>
+
+        <p>Remove the child from the parent:</p>
+        <p style="border: 1px solid black;background-color: aqua;">parent.removeChild(child);</p>
+
+        <p>Here is a common workaround: Find the child you want to remove, and use its parentNode property to find the parent:</p>
+        <p style="border: 1px solid black;background-color: aqua;">var child = document.getElementById("p1");<br>child.parentNode.removeChild(child);</p>
+
+    </div>
+    <div class="box">
+        <h2>Replacing HTML Elements </h2>
+        <p>To replace an element to the HTML DOM, use the replaceChild() method:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <pre>
+    &ltdiv id="div1">
+        &ltp id="p1">This is a paragraph.&lt/p>
+        &ltp id="p2">This is another paragraph.&lt/p>
+    &lt/div>
+                      
+    &ltscript>
+      var para = document.createElement("p");
+      var node = document.createTextNode("This is new.");
+      para.appendChild(node);
+                      
+      var parent = document.getElementById("div1");
+      var child = document.getElementById("p1");
+      parent.replaceChild(para, child);
+    &lt/script>
+                </pre>
+                <a href="./examples/domnodes/5.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+
+
+    </div>
+</body>
+</html>

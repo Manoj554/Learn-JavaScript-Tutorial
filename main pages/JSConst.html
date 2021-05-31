@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Const</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Const</h1>
+
+    <div class="box">
+        <h1>ECMAScript 2015</h1>
+        <p>ES2015 introduced two important new JavaScript keywords: <mark>let</mark> and <mark>const</mark>.</p>
+        <p>Variables defined with <mark>const</mark> behave like <mark>let</mark> variables, except they cannot be reassigned:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+const PI = 3.141592653589793;
+PI = 3.14;      // This will give an error
+PI = PI + 10;   // This will also give an error
+                            </pre>
+                            <a href="../examples/JSConst/example1.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Block Scope</h1>
+        <p>Declaring a variable with <mark>const</mark> is similar to <mark>let</mark> when it comes to <strong>Block Scope</strong>.</p>
+        <p>The x declared in the block, in this example, is not the same as the x declared outside the block:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+// Here x is 10
+{
+const x = 2;
+// Here x is 2
+}
+// Here x is 10
+                            </pre>
+                            <a href="../examples/JSConst/example2.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Assigned when Declared</h1>
+        <p>JavaScript <mark>const</mark> variables must be assigned a value when they are declared:</p>
+        <div>
+            <h3>Incorrect:</h3>
+                        <section>
+                            <pre>
+const PI;
+PI = 3.14159265359;
+                            </pre>
+                        </section>
+        </div>
+        <div>
+            <h3>Correct:</h3>
+                        <section>
+                            <pre>
+const PI = 3.14159265359;
+                            </pre>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Not Real Constants</h1>
+        <p>The keyword const is a little misleading.</p>
+        <p>It does NOT define a constant value. It defines a constant reference to a value.</p>
+        <p>Because of this, we cannot change constant primitive values, but we can change the properties of constant objects.</p>
+    </div>
+    <div class="box">
+        <h1>Primitive Values</h1>
+        <p>If we assign a primitive value to a constant, we cannot change the primitive value:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+const PI = 3.141592653589793;
+PI = 3.14;      // This will give an error
+PI = PI + 10;   // This will also give an error
+                            </pre>
+                            <a href="../examples/JSConst/example3.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Constant Objects can Change</h1>
+        <p>You can change the properties of a constant object:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+// You can create a const object:
+const car = {type:"Fiat", model:"500", color:"white"};
+
+// You can change a property:
+car.color = "red";
+
+// You can add a property:
+car.owner = "Johnson";
+                            </pre>
+                            <a href="../examples/JSConst/example4.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+        <p>But you can NOT reassign a constant object:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+const car = {type:"Fiat", model:"500", color:"white"};
+car = {type:"Volvo", model:"EX60", color:"red"};    // ERROR
+                            </pre>
+                            <a href="../examples/JSConst/example5.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Constant Arrays can Change</h1>
+        <p>You can change the elements of a constant array:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+// You can create a constant array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars[0] = "Toyota";
+
+// You can add an element:
+cars.push("Audi");
+                            </pre>
+                            <a href="../examples/JSConst/example6.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+        <p>But you can NOT reassign a constant array:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+const cars = ["Saab", "Volvo", "BMW"];
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+                            </pre>
+                            <a href="../examples/JSConst/example7.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Browser Support</h1>
+        <p>The <mark>const</mark> keyword is not supported in Internet Explorer 10 or earlier.</p>
+        <p>The following table defines the first browser versions with full support for the <mark>const</mark> keyword:</p>
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black" >
+            <thead>
+                <th>Chrome 49</th>
+                <th>IE / Edge 11</th>
+                <th>Firefox 36</th>
+                <th>Safari 10</th>
+                <th>Opera 36</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Mar, 2016</td>
+                <td>Oct, 2013</td>
+                <td>Feb, 2015</td>
+                <td>Sep, 2016</td>
+                <td>Mar, 2016</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="box">
+        <h1>Redeclaring</h1>
+        <p>Redeclaring a JavaScript <mark>var</mark> variable is allowed anywhere in a program:</p>
+            <div>
+                <h3>Example</h3>
+                            <section>
+                                <pre>
+var x = 2;    //  Allowed
+var x = 3;    //  Allowed
+x = 4;        //  Allowed
+                                </pre>
+                            </section>
+            </div>
+        <p>Redeclaring or reassigning an existing <mark>var</mark> or <mark>let</mark> variable to <mark>const</mark>, in the same scope, or in the same block, is not allowed:</p>
+        <div>
+            <h3>Example</h3>
+                        <section>
+                            <pre>
+var x = 2;         // Allowed
+const x = 2;       // Not allowed
+{
+    let x = 2;     // Allowed
+    const x = 2;   // Not allowed
+}
+                            </pre>
+                        </section>
+        </div>
+        <p>Redeclaring or reassigning an existing <mark>const</mark> variable, in the same scope, or in the same block, is not allowed:</p>
+        <div>
+            <h3>Example</h3>
+                        <section>
+                            <pre>
+const x = 2;       // Allowed
+const x = 3;       // Not allowed
+x = 3;             // Not allowed
+var x = 3;         // Not allowed
+let x = 3;         // Not allowed
+                                
+{
+    const x = 2;   // Allowed
+    const x = 3;   // Not allowed
+    x = 3;         // Not allowed
+    var x = 3;     // Not allowed
+    let x = 3;     // Not allowed
+}
+                            </pre>
+                        </section>
+        </div>
+        <p>Redeclaring a variable with <mark>const</mark>, in another scope, or in another block, is allowed:</p>
+        <div>
+            <h3>Example</h3>
+                        <section>
+                            <pre>
+const x = 2;       // Allowed
+
+{
+    const x = 3;   // Allowed
+}
+                                
+{
+    const x = 4;   // Allowed
+}
+                            </pre>
+                        </section>
+        </div>
+    </div>
+        <div class="box">
+            <h1>Hoisting</h1>
+            <p>Variables defined with <mark>var</mark> are <strong>hoisted</strong> to the top and can be initialized at any time (if you don't know what Hoisting is, read our Hoisting Chapter).</p>
+            <p>Meaning: You can use the variable before it is declared:</p>
+            <div>
+                <h3>Example</h3>
+                <h4>This is OK:</h4>
+                            <section>
+                                <pre>
+carName = "Volvo";
+alert(carName);
+var carName;
+                                </pre>
+                                <a href="../examples/JSConst/example8.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                            </section>
+            </div>
+            <p>Variables defined with <mark>const</mark> are hoisted to the top of the block, but not initialized.</p>
+            <p>Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.</p>
+            <p>The variable is in a "temporal dead zone" from the start of the block until it is declared.</p>
+            <p>Using a <mark>const</mark> variable before it is declared, is a syntax errror, so the code will simply not run.</p>
+            <div>
+                <h3>Example</h3>
+                            <section>
+                                <pre>
+carName = "Volvo";
+const carName;
+                                </pre>
+                                <a href="../examples/JSConst/example9.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                            </section>
+            </div>
+        </div>
+    </body>
+</html>    

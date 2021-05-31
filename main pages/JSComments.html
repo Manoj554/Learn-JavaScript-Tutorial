@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Comments</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Comments</h1>
+
+   
+    <div class="box">
+        <p>JavaScript comments can be used to explain JavaScript code, and to make it more readable.</p>
+        <p> JavaScript comments can also be used to prevent execution, when testing alternative code.</p>
+    </div>
+    <div class="box">
+        <h1>Single Line Comments</h1>
+        <p>line comments start with <mark>//</mark>.</p> 
+        <p>Any text between<mark> // </mark>and the end of the line will be ignored by JavaScript (will not be executed).</p>
+        <p> This example uses a single-line comment before each code line:</p>
+       
+      <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+// Change heading:
+document.getElementById("myH").innerHTML = "My First Page";
+
+// Change paragraph:
+document.getElementById("myP").innerHTML = "My first paragraph."; 
+            </pre>
+            <a href="../examples/JSComments/example1.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+     </div>
+     <div>
+        <p>This example uses a single line comment at the end of each line to explain the code:</p>
+     </div>
+     <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var x = 5;      // Declare x, give it the value of 5
+var y = x + 2;  // Declare y, give it the value of x + 2
+                </pre>
+            <a href="../examples/JSComments/example2.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Multi-line Comments</h1>
+        <p> Multi-line comments start with <mark>/* </mark>and end with<mark> */</mark>.</p>
+        <p> Any text between<mark> /*</mark> and <mark>*/</mark> will be ignored by JavaScript.</p>
+        <p> This example uses a multi-line comment (a comment block) to explain the code:</p>
+      <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+/*
+The code below will change
+the heading with id = "myH"
+and the paragraph with id = "myP"
+in my web page:
+*/
+document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+                </pre>
+            <a href="../examples/JSComments/example3.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+        </div>
+    </div>
+    <div class="box">
+
+        <h1>Using Comments to Prevent Execution</h1>
+        <p>Using comments to prevent execution of code is suitable for code testing.</p>
+        <p>Adding <mark>//</mark> in front of a code line changes the code lines from an executable line to a comment.</p>
+        <p>This example uses<mark> // </mark>to prevent execution of one of the code lines:</p>
+        
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+//document.getElementById("myH").innerHTML = "My First Page";
+document.getElementById("myP").innerHTML = "My first paragraph.";
+            </pre>
+            <a href="../examples/JSComments/example4.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+        </div>
+    
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<title>JavaScript Statements</title>
+</head>
+
+<body>
+	<h1 style="text-align: center;">JavaScript Statements</h1>
+
+	<div class="box">
+		<p>Example :- </p>
+		<section>
+			<pre>
+var x,y,z;    // Statement 1
+x = 5;        // Statement 2
+y = 6;        // Statement 3
+z = x + y;    // Statement 4
+                </pre>
+			<a href="../examples/JSStatements/example1.html" target="_blank"><button class="btn run">Run
+					Example</button></a>
+		</section>
+	</div>
+	<div class="box">
+		<h1>JavaScript Programs</h1>
+		<p>computer program is a list of "instructions" to be "executed" by a computer.</p> 
+		<p> a programming language, these programming instructions are called statements.</p>
+		<p>A JavaScript program is a list of programming statements.</p>
+	</div>
+	<div class="box">
+		<h1>JavaScript Statements</h1>
+		<p>JavaScript statements are composed of:</p>
+		<p>Values, Operators, Expressions, Keywords, and Comments.</p>
+		<p>This statement tells the browser to write "Hello Dolly." inside an HTML element with id="demo":</p>
+
+		<div>
+			<p>Example :- </p>
+			<section>
+				<pre>
+&lt;document.getElementById("demo").innerHTML = "Hello Dolly.";&gt;
+                </pre>
+				<a href="../examples/JSStatements/example2.html" target="_blank"><button class="btn run">Run
+					Example</button></a>
+				</section>
+			</div><br>
+	
+	  <div>
+		<p>JavaScript programs contain many JavaScript statements.</p>
+        <p>The statements are executed, one by one, in the same order as they are written.</p>
+		<p>JavaScript programs (and JavaScript statements) are often called JavaScript code.</p>
+	  </div>
+	</div>
+	<div class="box">
+		<h1>Semicolons ;</h1>
+		<p>Semicolons separate JavaScript statements.</p>
+		<p>Add a semicolon at the end of each executable statement:</p>
+	  <div>
+		<p>Example :- </p>
+		<section>
+			<pre>
+var a, b, c;     // Declare 3 variables
+a = 5;           // Assign the value 5 to a
+b = 6;           // Assign the value 6 to b
+c = a + b;       // Assign the sum of a and b to c
+                </pre>
+			<a href="../examples/JSStatements/example3.html" target="_blank"><button class="btn run">Run
+					Example</button></a>
+		</section>
+	  </div>
+	</div>
+	<div class="box">
+		<h1>JavaScript White Space</h1>
+		<p>ignores multiple spaces. You can add white space to your script to make it more readable.</p>
+		<p>A good practice is to put spaces around operators ( = + - * / )</p> 
+	</div>
+	<div class="box">
+		<h1>JavaScript Line Length and Line Breaks</h1>
+		<p>For best readability, programmers often like to avoid code lines longer than 80 characters.</p>
+		<p>If a JavaScript statement does not fit on one line, the best place to break it is after an operator:</p>
+		<div>
+			<p>Example :- </p>
+			<section>
+				<pre>
+document.getElementById("demo").innerHTML ="Hello Dolly!";
+                </pre>
+				<a href="../examples/JSStatements/example4.html" target="_blank"><button class="btn run">Run
+					Example</button></a>
+				</section>
+			</div>
+	</div>
+			<div class="box">
+		<h1>JavaScript Code Blocks</h1>
+		<ul>
+			<li>JavaScript statements can be grouped together in code blocks, inside curly brackets {...}.</li>
+			<li>The purpose of code blocks is to define statements to be executed together.</li>
+			<li>One place you will find statements grouped together in blocks, is in JavaScript functions:</li>
+		</ul>
+	  <div>
+		<p>Example :- </p>
+		<section>
+			<pre>
+function myFunction() {
+document.getElementById("demo1").innerHTML = "Hello Dolly!";
+document.getElementById("demo2").innerHTML = "How are you?";
+}
+                </pre>
+			<a href="../examples/JSStatements/example5.html" target="_blank"><button class="btn run">Run
+					Example</button></a>
+		</section>
+		</div>
+	</div>
+	<div class="box">
+		<h1>JavaScript Keywords</h1>
+		<p>JavaScript statements often start with a keyword to identify the JavaScript action to be performed.</p>
+        <p>Visit our Reserved Words reference to view a full list of JavaScript keywords.</p>
+        <p>Here is a list of some of the keywords you will learn about in this tutorial:</p>
+		<br>
+		<table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black">
+			<thead>
+				<tr>
+					<th>Keyword</th>
+					<th>Description</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>break</td>
+					<td>Terminates a switch or a loop</td>
+				</tr>
+				<tr>
+					<td>continue</td>
+					<td>Jumps out of a loop and starts at the top</td>
+				</tr>
+				<tr>
+					<td>debugger</td>
+					<td>Stops the execution of JavaScript, and calls (if available) the debugging function</td>
+				</tr>
+				<tr>
+					<td>do ...<br> while</td>
+					<td>Executes a block of statements, and repeats the block, while a condition is true</td>
+				</tr>
+				<tr>
+					<td>for</td>
+					<td>Marks a block of statements to be executed, as long as a condition is true</td>
+				</tr>
+				<tr>
+					<td>function</td>
+					<td>Declares a function</td>
+				</tr>
+				<tr>
+					<td>if ... else</td>
+					<td>Marks a block of statements to be executed, depending on a condition</td>
+				</tr>
+				<tr>
+					<td>return</td>
+					<td>Exits a function</td>
+				</tr>
+				<tr>
+					<td>switch</td>
+					<td>Marks a block of statements to be executed, depending on different cases</td>
+				</tr>
+				<tr>
+					<td>try ...<br> catch</td>
+					<td>Implements error handling to a block of statements</td>
+				</tr>
+				<tr>
+					<td>var</td>
+					<td>Declares a variable</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+
+</html>

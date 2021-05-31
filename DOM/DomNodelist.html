@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Nodelist</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="heading">JavaScript HTML DOM Node Lists</h1>
+    <div class="box">
+        <h2>The HTML DOM NodeList Object</h2>
+        <ul>
+            <li>A NodeList object is a list (collection) of nodes extracted from a document.</li>
+            <li>A NodeList object is almost the same as an HTMLCollection object.</li>
+            <li>Some (older) browsers return a NodeList object instead of an HTMLCollection for methods like getElementsByClassName().</li>
+            <li>All browsers return a NodeList object for the property childNodes. </li>
+            <li>Most browsers return a NodeList object for the method querySelectorAll().</li>
+            <li>The following code selects all &ltp> nodes in a document:</li>
+        </ul>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">var myNodeList = document.querySelectorAll("p");</p>
+                <p>The elements in the NodeList can be accessed by an index number. <br><br> To access the second <p> node you can write:</p>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">y = myNodeList[1];</p>
+
+                <a href="./examples/domnodelist/1.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <p><b>Note :</b> The index starts at 0.</p>
+    </div>
+
+    <div class="box">
+        <h2>HTML DOM Node List Length</h2>
+        <p>The length property defines the number of nodes in a node list:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">var myNodelist = document.querySelectorAll("p"); <br> <br>
+                document.getElementById("demo").innerHTML = myNodelist.length;</p><br>
+                <a href="./examples/domnodelist/2.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <p>Example explained:</p>
+        <ol>
+            <li>Create a list of all &ltp> elements</li>
+            <li>Display the length of the list</li>
+        </ol>
+        <p>The length property is useful when you want to loop through the nodes in a node list:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">var myNodelist = document.querySelectorAll("p");<br><br>
+                    var i;<br><br>
+                    for (i = 0; i < myNodelist.length; i++) {<br><br>
+                      myNodelist[i].style.color = "red";<br><br>
+                    }</p><br><br>
+                <a href="./examples/domnodelist/3.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>The Difference Between an HTMLCollection and a NodeList</h2>
+        <ol>
+            <li>An HTMLCollection (previous chapter) is a collection of HTML elements.</li>
+            <li>A NodeList is a collection of document nodes</li>
+            <li>A NodeList and an HTML collection is very much the same thing.</li>
+            <li>Both an HTMLCollection object and a NodeList object is an array-like list (collection) of objects.</li>
+            <li>Both have a length property defining the number of items in the list (collection).</li>
+            <li>Both provide an index (0, 1, 2, 3, 4, ...) to access each item like an array.</li>
+            <li>HTMLCollection items can be accessed by their name, id, or index number.</li>
+            <li>NodeList items can only be accessed by their index number.</li>
+            <li>Only the NodeList object can contain attribute nodes and text nodes.</li>
+        </ol>
+
+        <div style="background-color: chartreuse; padding: 20px;">
+            <h3>An HTMLCollection is NOT an array!</h3>
+            <p>An HTMLCollection may look like an array, but it is not.</p>
+            <p>You can loop through the list and refer to the elements with a number (just like an array).</p>
+            <p>However, you cannot use array methods like valueOf(), pop(), push(), or join() on an HTMLCollection.</p>
+        </div>
+
+    </div>
+</body>
+</html>

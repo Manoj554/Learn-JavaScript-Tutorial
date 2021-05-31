@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript this</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">The JavaScript <strong>this</strong> Keyword</h1>                           
+    <div class="box">
+        <div>
+            <h2>Example</h2>
+                        <section>
+                            <pre>
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+                            </pre>
+                            <a href="../examples/JSThis/example1.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>What is <strong>this</strong>?</h1>
+        <p>The JavaScript <mark>this</mark> keyword refers to the object it belongs to.</p>
+        <div>
+                        <section>
+                            <pre>
+<p>It has different values depending on where it is used:</p>
+In a method, <mark>this</mark> refers to the <strong>owner object</strong>.
+<hr>
+Alone, <mark>this</mark> refers to the <strong>global object.</strong>
+<hr>
+In a function, <mark>this</mark> refers to the <strong>global object.</strong>
+<hr>
+In a function, in strict mode, <mark>this</mark> is <mark>undefined</mark>.
+<hr>
+In an event, <mark>this</mark> refers to the <strong>element</strong> that received the event.
+<hr>
+Methods like <mark>call(</mark>), and <mark>apply()</mark> can refer <mark>this</mark> to <strong>any object.</strong>
+                            </pre>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1><strong>this</strong> in a Method</h1>
+        <p>In an object method, <mark>this</mark> refers to the "<strong>owner</strong>" of the method.</p>
+        <p>In the example on the top of this page, <mark>this</mark> refers to the <strong>person</strong> object.</p>
+        <p>The <strong>person</strong> object is the <strong>owner</strong> of the <strong>fullName</strong> method.</p>
+        <div>
+                        <section>
+                            <pre>
+fullName : function() {
+    return this.firstName + " " + this.lastName;
+}
+                            </pre>
+                            <a href="../examples/JSThis/example2.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1><strong>this</strong> Alone</h1>
+        <p>When used alone, the <strong>owner</strong> is the Global object, so <mark>this</mark> refers to the Global object.</p>
+        <p>In a browser window the Global object is <mark>[object Window]</mark>:</p>
+        <div>
+            <h2>Example</h2>
+                        <section>
+                            <pre>
+var x = this;
+                            </pre>
+                            <a href="../examples/JSThis/example3.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+        <p> In <strong>strict mode</strong>, when used alone, <mark>this</mark> also refers to the Global object <mark>[object Window]</mark>:</p>
+        <div>
+            <h2>Example</h2>
+                        <section>
+                            <pre>
+"use strict";
+ var x = this;
+                            </pre>
+                            <a href="../examples/JSThis/example4.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1><strong>this</strong> in a Function (Default)</h1>
+        <p>In a JavaScript function, the owner of the function is the <strong>default</strong> binding for <mark>this</mark>.</p>
+        <p>So, in a function, <mark>this</mark> refers to the Global object <mark>[object Window]</mark>.</p>
+        <div>
+        <h2>Example</h2>
+                        <section>
+                            <pre>
+function myFunction() {
+    return this;
+}
+                            </pre>
+                            <a href="../examples/JSThis/example5.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1><strong>this</strong> in a Function (Strict)</h1>
+        <p>JavaScript <strong>strict mode</strong> does not allow default binding.</p>
+        <p>So, when used in a function, in strict mode, <mark>this</mark> is <mark>undefined</mark>.</p>
+        <div>
+        <h2>Example</h2>
+                        <section>
+                            <pre>
+"use strict";
+function myFunction() {
+  return this;
+}
+                            </pre>
+                            <a href="../examples/JSThis/example6.html" target="_blank"><button class="btn run">Run
+                                Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1><strong>this</strong> in Event Handlers</h1>
+        <p>In HTML event handlers, <mark>this</mark> refers to the HTML element that received the event:</p>
+        <div>
+            <h2>Example</h2>
+                            <section>
+                                <pre>
+&lt;button onclick="this.style.display='none'"&gt;
+       Click to Remove Me!
+&lt;/button&gt;
+                                </pre>
+                                <a href="../examples/JSThis/example7.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Object Method Binding</h1>
+        <p>In these examples, <mark>this</mark> is the <strong>person</strong> object (The person object is the "owner" of the function):</p>
+        <div>
+            <h2>Example</h2>
+                            <section>
+                                <pre>
+var person = {
+    firstName  : "John",
+    lastName   : "Doe",
+    id         : 5566,
+    myFunction : function() {
+      return th
+                                    </button>
+                                </pre>
+                                <a href="../examples/JSThis/example8.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                            </section>
+        </div>
+        <div>
+            <h2>Example</h2>
+                            <section>
+                                <pre>
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+      return this.firstName + " " + this.lastName;
+    }
+};
+                                </pre>
+                                <a href="../examples/JSThis/example9.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                            </section>
+        </div>
+        <p>In other words: <strong>this.firstName</strong> means the <strong>firstName</strong> property of <strong>this</strong> (person) object.</p>
+    </div>
+    <div class="box">
+        <h1>Explicit Function Binding</h1>
+        <p>The <mark>call()</mark> and <mark>apply()</mark> methods are predefined JavaScript methods.</p>
+        <p>They can both be used to call an object method with another object as argument.</p>
+        <p>In the example below, when calling person1.fullName with person2 as argument, <mark>this</mark> will refer to person2, even if it is a method of person1:</p>
+        <div>
+            <h2>Example</h2>
+                            <section>
+                                <pre>
+var person1 = {
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  var person2 = {
+    firstName:"John",
+    lastName: "Doe",
+  }
+  person1.fullName.call(person2);  // Will return "John Doe"
+                                </pre>
+                                <a href="../examples/JSThis/example10.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                            </section>
+        </div>
+    </div>
+    </body>
+    </html>
+
+

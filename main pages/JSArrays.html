@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Arrays</title>
+    <style>table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }</style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Arrays</h1>
+
+    <div class="box">
+        <h2>What is an Array?</h2>
+        <p>An array is a special variable, which can hold more than one value at a time.</p>
+        <p>If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:</p>
+
+        <div>
+            <section>
+                <pre>
+var car1 = "Saab";
+var car2 = "Volvo";
+var car3 = "BMW";
+                </pre>
+            </section>
+        </div>
+        <p>However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?</p>
+        <p>The solution is an array!</p>
+        <p>An array can hold many values under a single name, and you can access the values by referring to an index number.</p>
+    </div>
+
+
+        <div class="box">
+            <h2>Creating an Array</h2>
+          
+            <p>Using an array literal is the easiest way to create a JavaScript Array.</p>
+            <div>
+                <p>Syntax:</p>
+                <section>
+                    <pre>
+    var array_name = [item1, item2, ...];
+                    </pre>
+                </section>
+            </div>  
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var cars = ["Saab", "Volvo", "BMW"];
+                    </pre>
+                    <a href="../examples/JS Arrays/1.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+                </section>
+            </div> 
+        </div> 
+
+        <div class="box">
+            <h2>Using the JavaScript Keyword new</h2>
+          
+            <p>The following example also creates an Array, and assigns values to it:</p>
+            <div>
+                <p>Example :- </p>
+                <section>
+                    <pre>
+var cars = new Array("Saab", "Volvo", "BMW");
+                    </pre>
+                    <a href="../examples/JS Arrays/2.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+                </section>
+            </div>
+        </div>
+
+        <div class="box">
+            <p>The two examples above do exactly the same. There is no need to use new Array().</p>
+            <p>For simplicity, readability and execution speed, use the first one (the array literal method).</p>
+        </div>
+   
+
+
+    <div class="box">
+        <h2>Access the Elements of an Array</h2>
+        <p>You access an array element by referring to the index number.</p>
+        <p>This statement accesses the value of the first element in cars:</p>
+        <div>
+            <section>
+                <pre>
+var name = cars[0];   
+                </pre>
+            </section>
+        </div>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars[0]; 
+                </pre>
+                <a href="../examples/JS Arrays/3.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+            </section>
+        </div>
+    </div>
+ 
+    <div class="box">
+        <h2>Changing an Array Element</h2>
+        <p>This statement changes the value of the first element in cars:</p>
+        <div>            <section>
+            <pre>
+cars[0] = "Opel";
+            </pre>
+        </section></div>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Opel";
+document.getElementById("demo").innerHTML = cars[0];
+                </pre>
+                <a href="../examples/JS Arrays/4.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+
+
+    <div class="box">
+        <h2>Access the Full Array</h2>
+      
+        <p>With JavaScript, the full array can be accessed by referring to the array name:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("demo").innerHTML = cars;
+                </pre>
+                <a href="../examples/JS Arrays/5.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Arrays are Objects</h2>
+        <p>Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.</p>
+        <p>But, JavaScript arrays are best described as arrays.</p>
+        <p>Arrays use numbers to access its "elements". In this example, person[0] returns John:</p>
+        <div>
+
+            <section>
+                <p>Array:</p>
+                <pre>
+var person = ["John", "Doe", 46];
+                </pre>
+
+            </section>
+        </div>
+        <p>Objects use names to access its "members". In this example, person.firstName returns John:</p>
+        <div>
+ 
+            <section>
+                <p>Object:</p>
+                <pre>
+var person = {firstName:"John", lastName:"Doe", age:46};
+                </pre>
+            </section>
+        </div>
+    </div>
+    <div class="box">
+        <h2>Array Elements Can Be Objects</h2>
+        <p>JavaScript variables can be objects. Arrays are special kinds of objects.</p>
+        <p>Because of this, you can have variables of different types in the same Array.</p>
+        <p>You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:</p>
+        <div>
+            <section>
+                <pre>
+myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars;
+                </pre>
+
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Array Properties and Methods</h2>
+        <p>The real strength of JavaScript arrays are the built-in array properties and methods:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var x = cars.length;   // The length property returns the number of elements
+var y = cars.sort();   // The sort() method sorts arrays
+                </pre>
+            </section>
+        </div>
+    </div>
+
+<div class="box">
+    <h2>The length Property</h2>
+    <p>The length property of an array returns the length of an array (the number of array elements).</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.length;   // the length of fruits is 4
+            </pre>
+            <a href="../examples/JS Arrays/6.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+
+    </div>
+    <p>The length property is always one more than the highest array index.</p>
+</div>
+<div class="box">
+    <h2>Accessing the First Array Element</h2>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+var first = fruits[0];
+            </pre>
+            <a href="../examples/JS Arrays/7.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+
+</div>
+<div class="box">
+    <h2>Accessing the Last Array Element</h2>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+var last = fruits[fruits.length - 1];
+            </pre>
+            <a href="../examples/JS Arrays/8.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+
+</div>
+<div class="box">
+    <h2>Looping Array Elements</h2>
+    <p>The safest way to loop through an array, is using a for loop:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fLen = fruits.length;
+
+text = "&lt;ul&gt;";
+for (i = 0; i &lt; fLen; i++) {
+text += "&lt;li&gt;" + fruits[i] + "&lt;/li&gt;";
+}
+text += "</ul>";
+            </pre>
+            <a href="../examples/JS Arrays/9.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>You can also use the Array.forEach() function:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "&lt;ul&gt;";
+fruits.forEach(myFunction);
+text += "&lt;/ul&gt;";
+
+function myFunction(value) {
+text += "&lt;li&gt;" + value + "&lt;/li&gt;";
+}
+            </pre>
+            <a href="../examples/JS Arrays/10.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Adding Array Elements</h2>
+    <p>The easiest way to add a new element to an array is using the push() method:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Lemon");    // adds a new element (Lemon) to fruits
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    
+        <p>New element can also be added to an array using the length property:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[fruits.length] = "Lemon";    // adds a new element (Lemon) to fruits
+                </pre>
+                <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+</div>
+<div class="box">
+    <h2>Associative Arrays</h2>
+    <p>Many programming languages support arrays with named indexes.</p>
+    <p>Arrays with named indexes are called associative arrays (or hashes).</p>
+    <p>JavaScript does not support arrays with named indexes.</p>
+    <p>In JavaScript, arrays always use numbered indexes. </p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+var x = person.length;     // person.length will return 3
+var y = person[0];         // person[0] will return "John"
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>The Difference Between Arrays and Objects</h2>
+    <p>In JavaScript, arrays use numbered indexes. </p>
+    <p>In JavaScript, objects use named indexes.</p>
+</div>
+<div class="box">
+    <h2>When to Use Arrays. When to use Objects.</h2>
+    <ul>
+        <li>
+            JavaScript does not support associative arrays.
+        </li>
+        <li>
+            You should use objects when you want the element names to be strings (text).
+        <li>
+            You should use arrays when you want the element names to be numbers.
+        </li>
+    </ul>
+</div>
+<div class="box">
+    <h2>Avoid new Array()</h2>
+    <p>There is no need to use the JavaScript's built-in array constructor new Array().</p>
+    <p>Use [] instead.</p>
+    <p>These two different statements both create a new empty array named points:</p>
+    <div>
+        <section>
+            <pre>
+var points = new Array();     // Bad
+var points = [];              // Good 
+            </pre>
+        </section>
+    </div>
+    <p>The new keyword only complicates the code. It can also produce some unexpected results.</p>
+</div>
+<div class="box">
+    <h2>Converting Arrays to Strings</h2>
+    <p>The JavaScript method toString() converts an array to a string of (comma separated) array values.</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+            </pre>
+            <a href="../examples/JS Arrays/11.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Result:</p>
+    <div>
+        <section>
+            <pre>
+Banana,Orange,Apple,Mango
+            </pre>
+        </section>
+    </div>
+    <p>The join() method also joins all array elements into a string.</p>
+    <p>It behaves just like toString(), but in addition you can specify the separator:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+            </pre>
+            <a href="../examples/JS Arrays/12.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Result:</p>
+    <div>
+        <section>
+            <pre>
+Banana * Orange * Apple * Mango
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Popping and Pushing</h2>
+    <p>When you work with arrays, it is easy to remove elements and add new elements.</p>
+    <p>This is what popping and pushing is:</p>
+    <p>Popping items out of an array, or pushing items into an array.</p>
+</div>
+<div class="box">
+    <h2>Popping</h2>
+    <p>The pop() method removes the last element from an array:</p>
+
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();              // Removes the last element ("Mango") from fruits
+            </pre>
+            <a href="../examples/JS Arrays/13.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The pop() method returns the value that was "popped out":</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.pop();      // the value of x is "Mango"
+            </pre>
+            <a href="../examples/JS Arrays/14.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Pushing</h2>
+    <p>The push() method adds a new element to an array (at the end):</p>
+
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+            </pre>
+            <a href="../examples/JS Arrays/15.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The push() method returns the new array length:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.push("Kiwi");   //  the value of x is 5
+            </pre>
+            <a href="../examples/JS Arrays/16.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Shifting Elements</h2>
+    <p>Shifting is equivalent to popping, working on the first element instead of the last.</p>
+    <p>The shift() method removes the first array element and "shifts" all other elements to a lower index.</p>
+
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();            // Removes the first element "Banana" from fruits
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The shift() method returns the string that was "shifted out":</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+var x = fruits.shift();    // the value of x is "Banana"
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The unshift() method returns the new array length.</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Returns 5
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Changing Elements</h2>
+    <p>Array elements are accessed using their index number:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The length property provides an easy way to append a new element to an array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[fruits.length] = "Kiwi";          // Appends "Kiwi" to fruits
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Deleting Elements</h2>
+    <p>Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];           // Changes the first element in fruits to undefined
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Using delete may leave undefined holes in the array. Use pop() or shift() instead.</p>
+</div>
+<div class="box">
+    <h2>Splicing an Array</h2>
+    <p>The splice() method can be used to add new items to an array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+            </pre>
+            <a href="../examples/JS Arrays/17.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The first parameter (2) defines the position where new elements should be added (spliced in).</p>
+    <p>The second parameter (0) defines how many elements should be removed.</p>
+    <p>The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.</p>
+    <p>The splice() method returns an array with the deleted items:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 2, "Lemon", "Kiwi");
+            </pre>
+            <a href="../examples/JS Arrays/18.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Using splice() to Remove Elements</h2>
+    <p>With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);        // Removes the first element of fruits
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The first parameter (0) defines the position where new elements should be added (spliced in).</p>
+    <p>The second parameter (1) defines how many elements should be removed.</p>
+    <p>The rest of the parameters are omitted. No new elements will be added.</p>
+</div>
+<div class="box">
+    <h2>Merging (Concatenating) Arrays</h2>
+    <p>The concat() method creates a new array by merging (concatenating) existing arrays:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias", "Linus"];
+var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+            </pre>
+            <a href="../examples/JS Arrays/19.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>The concat() method can take any number of array arguments:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var arr1 = ["Cecilie", "Lone"];
+var arr2 = ["Emil", "Tobias", "Linus"];
+var arr3 = ["Robin", "Morgan"];
+var myChildren = arr1.concat(arr2, arr3);   // Concatenates arr1 with arr2 and arr3
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Slicing an Array</h2>
+    <p>The slice() method slices out a piece of an array into a new array.</p>
+    <p>This example slices out a part of an array starting from array element 1 ("Orange"):</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1);
+            </pre>
+            <a href="../examples/JS Arrays/20.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Automatic toString()</h2>
+    <p>JavaScript automatically converts an array to a comma separated string when a primitive value is expected.</p>
+    <p>This is always the case when you try to output an array.</p>
+    <p>These two examples will produce the same result:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Sorting an Array</h2>
+    <p>The sort() method sorts an array alphabetically:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();        // Sorts the elements of fruits
+            </pre>
+            <a href="../examples/JS Arrays/21.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Reversing an Array</h2>
+    <p>The reverse() method reverses the elements in an array.</p>
+    <p>You can use it to sort an array in descending order:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();        // First sort the elements of fruits
+fruits.reverse();     // Then reverse the order of the elements
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+    <div class="box">
+        <h2>Numeric Sort</h2>
+        <p>By default, the sort() function sorts values as strings.</p>
+        <p>This works well for strings ("Apple" comes before "Banana").</p>
+        <p>However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".</p>
+        <p>Because of this, the sort() method will produce incorrect result when sorting numbers.</p>
+        <p>You can fix this by providing a compare function:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+                </pre>
+                <a href="../examples/JS Arrays/22.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+</div>
+<div class="box">
+    <h2>The Compare Function</h2>
+    <p>The purpose of the compare function is to define an alternative sort order.</p>
+    <p>The compare function should return a negative, zero, or positive value, depending on the arguments:</p>
+    <div>
+        <section>
+            <pre>
+function(a, b){return a - b}
+            </pre>
+        </section>
+    </div>
+    <p>When the sort() function compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.</p>
+    <p>If the result is negative a is sorted before b.</p>
+    <p>If the result is positive b is sorted before a.</p>
+    <p>If the result is 0 no changes are done with the sort order of the two values.</p>
+    <h4>Example:</h4>
+    <p>The compare function compares all the values in the array, two values at a time (a, b).</p>
+    <p>When comparing 40 and 100, the sort() method calls the compare function(40, 100).</p>
+    <p>The function calculates 40 - 100 (a - b), and since the result is negative (-60),  the sort function will sort 40 as a value lower than 100.</p>
+   
+
+</div>
+<div class="box">
+    <h2>The Fisher Yates Method</h2>
+    <p>The above example, array.sort(), is not accurate, it will favor some numbers over the others.</p>
+    <p>The most popular correct method, is called the Fisher Yates shuffle, and was introduced in data science as early as 1938!</p>
+    <p>In JavaScript the method can be translated to this:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var points = [40, 100, 1, 5, 25, 10];
+
+for (i = points.length -1; i > 0; i--) {
+    j = Math.floor(Math.random() * i)
+    k = points[i]
+    points[i] = points[j]
+    points[j] = k
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Find the Highest (or Lowest) Array Value</h2>
+    <p>There are no built-in functions for finding the max or min value in an array.</p>
+    <p>However, after you have sorted an array, you can use the index to obtain the highest and lowest values.</p>
+    <p>Sorting ascending:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+// now points[0] contains the lowest value
+// and points[points.length-1] contains the highest value
+            </pre>
+            <a href="../examples/JS Arrays/24.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Sorting descending:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+// now points[0] contains the highest value
+// and points[points.length-1] contains the lowest value
+            </pre>
+            <a href="../examples/JS Arrays/25.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Using Math.max() on an Array</h2>
+    <p>You can use Math.max.apply to find the highest number in an array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+function myArrayMax(arr) {
+    return Math.max.apply(null, arr);
+    }
+            </pre>
+            <a href="../examples/JS Arrays/26.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Math.max.apply(null, [1, 2, 3]) is equivalent to Math.max(1, 2, 3).</p>
+</div>
+<div class="box">
+    <h2>Using Math.min() on an Array</h2>
+    <p>You can use Math.min.apply to find the lowest number in an array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+function myArrayMin(arr) {
+    return Math.min.apply(null, arr);
+    }
+            </pre>
+            <a href="../examples/JS Arrays/27.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Math.min.apply(null, [1, 2, 3]) is equivalent to Math.min(1, 2, 3).</p>
+</div>
+<div class="box">
+    <h2>Sorting Object Arrays</h2>
+    <p>JavaScript arrays often contain objects:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var cars = [
+    {type:"Volvo", year:2016},
+    {type:"Saab", year:2001},
+    {type:"BMW", year:2010}
+];
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Even if objects have properties of different data types, the sort() method can be used to sort the array.</p>
+    <p>The solution is to write a compare function to compare the property values:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+cars.sort(function(a, b){return a.year - b.year});
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.forEach()</h2>
+    <p>The forEach() method calls a function (a callback function) once for each array element.</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+    txt = txt + value + "<br>";
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 3 arguments:</p>
+    <ul>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+    <p>The example above uses only the value parameter. The example can be rewritten to:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value) {
+    txt = txt + value + "<br>";
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.map()</h2>
+    <p>The map() method creates a new array by performing a function on each array element.</p>
+    <p>The map() method does not execute the function for array elements without values.</p>
+    <p>The map() method does not change the original array.</p>
+    <p>This example multiplies each array value by 2:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+function myFunction(value, index, array) {
+    return value * 2;
+}
+            </pre>
+            <a href="../examples/JS Arrays/28.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 3 arguments:</p>
+    <ul>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+    <p>When a callback function uses only the value parameter, the index and array parameters can be omitted:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers1 = [45, 4, 9, 16, 25];
+var numbers2 = numbers1.map(myFunction);
+
+function myFunction(value) {
+    return value * 2;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.filter()</h2>
+    <p>The filter() method creates a new array with array elements that passes a test.</p>
+    <p>This example creates a new array from elements with a value larger than 18:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value, index, array) {
+    return value > 18;
+}
+            </pre>
+            <a href="../examples/JS Arrays/29.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 3 arguments:</p>
+    <ul>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+    <p>In the example above, the callback function does not use the index and array parameters, so they can be omitted:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+
+function myFunction(value) {
+    return value > 18;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.reduce()</h2>
+    <p>The reduce() method runs a function on each array element to produce (reduce it to) a single value.</p>
+    <p>The reduce() method works from left-to-right in the array. See also reduceRight().</p>
+    <p>The reduce() method does not reduce the original array.</p>
+    <p>This example finds the sum of all numbers in an array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+    return total + value;
+}
+            </pre>
+            <a href="../examples/JS Arrays/30.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 4 arguments:</p>
+    <ul>
+        <li>
+            The total (the initial value / previously returned value)
+        </li>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+    <p>The example above does not use the index and array parameters. It can be rewritten to:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value) {
+    return total + value;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.reduceRight()</h2>
+    <p>The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.</p>
+    <p>The reduceRight() works from right-to-left in the array.</p>
+    <p>The reduceRight() method does not reduce the original array.</p>
+    <p>This example finds the sum of all numbers in an array:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value, index, array) {
+    return total + value;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 4 arguments:</p>
+    <ul>
+        <li>
+            The total (the initial value / previously returned value)
+        </li>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+    <p>The example above does not use the index and array parameters. It can be rewritten to:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduceRight(myFunction);
+
+function myFunction(total, value) {
+    return total + value;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.every()</h2>
+    <p>The every() method check if all array values pass a test.</p>
+    <p>The every() method check if all array values pass a test.</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+
+function myFunction(value, index, array) {
+    return value > 18;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 3 arguments:</p>
+    <ul>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+    <p>When a callback function uses the first parameter only (value), the other parameters can be omitted:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers = [45, 4, 9, 16, 25];
+var allOver18 = numbers.every(myFunction);
+
+function myFunction(value) {
+    return value > 18;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+</div>
+<div class="box">
+    <h2>Array.some()</h2>
+    <p>The some() method check if some array values pass a test.</p>
+    <p>This example check if some array values are larger than 18:</p>
+    <div>
+        <p>Example :- </p>
+        <section>
+            <pre>
+var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+
+function myFunction(value, index, array) {
+    return value > 18;
+}
+            </pre>
+            <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+        </section>
+    </div>
+    <p>Note that the function takes 3 arguments:</p>
+    <ul>
+        <li>
+            The item value
+        </li>
+        <li>
+            The item index
+        </li>
+        <li>
+            The array itself
+        </li>
+    </ul>
+</div>
+    <div class="box">
+        <h2>Array.find()</h2>
+        <p>The find() method returns the value of the first array element that passes a test function.</p>
+        <p>This example finds (returns the value of) the first element that is larger than 18:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+    return value > 18;
+}
+                </pre>
+                <a href="../Examples/Images-Page-Examples/exp39.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+        <p>Note that the function takes 3 arguments:</p>
+        <ul>
+            <li>
+                The item value
+            </li>
+            <li>
+                The item index
+            </li>
+            <li>
+                The array itself
+            </li>
+        </ul>
+</div>
+
+</body>
+
+</html>

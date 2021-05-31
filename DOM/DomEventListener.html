@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Eventlistener</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 id="heading">HTML DOM EventListener</h1>
+    <div class="box">
+        <h2>The addEventListener() method</h2>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p>Add an event listener that fires when a user clicks a button:</p>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">document.getElementById("myBtn").addEventListener("click", displayDate);</p>
+                <a href="./examples/domeventlistener/1.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+
+        <ul>
+            <li>The addEventListener() method attaches an event handler to the specified element.</li>
+            <li>The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.</li>
+            <li>You can add many event handlers to one element.</li>
+            <li>You can add many event handlers of the same type to one element, i.e two "click" events.</li>
+            <li>You can add event listeners to any DOM object not only HTML elements. i.e the window object.</li>
+            <li>The addEventListener() method makes it easier to control how the event reacts to bubbling.</li>
+            <li>When using the addEventListener() method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup.</li>
+            <li>You can easily remove an event listener by using the removeEventListener() method.</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2>Syntax</h2>
+        <p style="border: 1px solid; background-color: whitesmoke;">element.addEventListener(event, function, useCapture);</p>
+        <p>The first parameter is the type of the event (like "click" or "mousedown" or any other HTML DOM Event.)</p>
+        <p>The second parameter is the function we want to call when the event occurs.</p>
+        <p>The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.</p>
+        <div style="background-color: chartreuse; padding: 20px;">
+            <p>Note that you don't use the "on" prefix for the event; use "click" instead of "onclick".</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Add an Event Handler to an Element</h2>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+               <p>Alert "Hello World!" when the user clicks on an element:</p>
+               <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">element.addEventListener("click", function(){ alert("Hello World!"); });</p>
+               <a href="./examples/domeventlistener/2.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <p>You can also refer to an external "named" function:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+               <p>Alert "Hello World!" when the user clicks on an element:</p>
+               <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">lement.addEventListener("click", myFunction);<br><br>
+                function myFunction() {<br><br>
+                  alert ("Hello World!");<br>
+                }</p><br>
+                <a href="./examples/domeventlistener/9.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <h2>Add Many Event Handlers to the Same Element</h2>
+        <p>The addEventListener() method allows you to add many events to the same element, without overwriting existing events:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">element.addEventListener("click", myFunction);<br>
+                    element.addEventListener("click", mySecondFunction);</p>
+                <a href="./examples/domeventlistener/3.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+        <p>You can add events of different types to the same element:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">element.addEventListener("mouseover", myFunction);<br>
+                    element.addEventListener("click", mySecondFunction);<br>
+                    element.addEventListener("mouseout", myThirdFunction);<br></p><br>
+                <a href="./examples/domeventlistener/4.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Add an Event Handler to the window Object</h2>
+        <p>The addEventListener() method allows you to add event listeners on any HTML DOM object such as HTML elements, the HTML document, the window object, or other objects that support events, like the xmlHttpRequest object.</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p>Add an event listener that fires when a user resizes the window:</p>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">window.addEventListener("resize", function(){<br>
+                    document.getElementById("demo").innerHTML = sometext;<br>
+                  });</p><br>
+                <a href="./examples/domeventlistener/5.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <h2>Passing Parameters</h2>
+        <p>When passing parameter values, use an "anonymous function" that calls the specified function with the parameters:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">element.addEventListener("click", function(){ myFunction(p1, p2); });</p>
+                <a href="./examples/domeventlistener/6.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Event Bubbling or Event Capturing?</h2>
+        <p>There are two ways of event propagation in the HTML DOM, bubbling and capturing.</p>
+        
+        <p>Event propagation is a way of defining the element order when an event occurs. If you have a &ltp> element inside a &ltdiv> element, and the user clicks on the &ltp> element, which element's "click" event should be handled first?</p>
+
+        <p>In bubbling the inner most element's event is handled first and then the outer: the &ltp> element's click event is handled first, then the &ltdiv> element's click event.</p>
+
+        <p>In capturing the outer most element's event is handled first and then the inner: the &ltdiv> element's click event will be handled first, then the &ltp> element's click event.</p>
+
+        <p>With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:</p>
+
+        <p style="border: 1px solid;background-color: whitesmoke;">addEventListener(event, function, useCapture);</p>
+
+        <p>The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.</p>
+
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">document.getElementById("myP").addEventListener("click", myFunction, true);<br>
+                    document.getElementById("myDiv").addEventListener("click", myFunction, true);</p><br>
+                <a href="./examples/domeventlistener/7.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>The removeEventListener() method</h2>
+        <p>The removeEventListener() method removes event handlers that have been attached with the addEventListener() method:</p>
+        <div>
+            <p><b>Example: </b></p>
+            <section>
+                <p style="border: 2px solid black;background-color: white;border-left: 10px solid rgb(60, 90, 6); padding-left: 40px;">element.removeEventListener("mousemove", myFunction);</p>
+                <a href="./examples/domeventlistener/8.html" target="_blank"><button class="btn run">Run Example</button></a>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

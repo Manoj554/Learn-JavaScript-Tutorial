@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Math Object</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Math Object</h1>
+    <div class="box">
+        <p>The JavaScript Math object allows you to perform mathematical tasks on numbers.</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.PI;            // returns 3.141592653589793
+                            </pre>
+                            <a href="../examples/JSMath/example1.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div> 
+    <div class="box">
+        <h1>Math.round()</h1>
+        <p><mark>Math.round(x)</mark> returns the value of x rounded to its nearest integer:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.round(4.7);    // returns 5
+Math.round(4.4);    // returns 4
+                            </pre>
+                            <a href="../examples/JSMath/example2.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+
+    </div> 
+    <div class="box">
+        <h1>Math.pow()</h1>
+        <p><mark>Math.pow(x, y)</mark> returns the value of x to the power of y:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.pow(8, 2);      // returns 64
+                            </pre>
+                            <a href="../examples/JSMath/example3.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+
+    </div> 
+    <div class="box">
+        <h1>Math.sqrt()</h1>
+        <p><mark>Math.sqrt(x)</mark> returns the square root of x:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.sqrt(64);      // returns 8
+                            </pre>
+                            <a href="../examples/JSMath/example4.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div> 
+    <div class="box">
+        <h1>Math.abs()</h1>
+        <p><mark>Math.abs(x)</mark> returns the absolute (positive) value of x:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.abs(-4.7);     // returns 4.7
+                            </pre>
+                            <a href="../examples/JSMath/example5.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math.ceil()</h1>
+        <p><mark>Math.ceil(x)</mark> returns the value of x rounded up to its nearest integer:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.ceil(4.4);     // returns 5
+                            </pre>
+                            <a href="../examples/JSMath/example6.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math.floor()</h1>
+        <p><mark>Math.floor(x)</mark> returns the value of x rounded <strong>down</strong> to its nearest integer:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.floor(4.7);    // returns 4
+                            </pre>
+                            <a href="../examples/JSMath/example7.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math.sin()</h1>
+        <p><mark>Math.sin(x)</mark> returns the sine (a value between -1 and 1) of the angle x (given in radians).</p>
+        <p>If you want to use degrees instead of radians, you have to convert degrees to radians</p>
+        <p>Angle in radians = Angle in degrees x PI / 180.</p>
+                        <section>
+                            <pre>
+Math.sin(90 * Math.PI / 180);     // returns 1 (the sine of 90 degrees)
+                            </pre>
+                            <a href="../examples/JSMath/example8.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math.cos()</h1>
+        <p><mark>Math.cos(x)</mark> returns the cosine (a value between -1 and 1) of the angle x (given in radians).</p>
+        <p>If you want to use degrees instead of radians, you have to convert degrees to radians:</p>
+        <p>Angle in radians = Angle in degrees x PI / 180.</p>
+                        <section>
+                            <pre>
+Math.cos(0 * Math.PI / 180);     // returns 1 (the cos of 0 degrees)
+                            </pre>
+                            <a href="../examples/JSMath/example9.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math.min() and Math.max()</h1>
+        <p><mark>Math.min()</mark> and <mark>Math.max()</mark> can be used to find the lowest or highest value in a list of arguments:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.min(0, 150, 30, 20, -8, -200);  // returns -200
+                            </pre>
+                            <a href="../examples/JSMath/example10.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.max(0, 150, 30, 20, -8, -200);  // returns 150
+                            </pre>
+                            <a href="../examples/JSMath/example11.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>     
+    </div>
+    <div class="box">
+        <h1>Math.random()</h1>
+        <p><mark>Math.random()</mark> returns a random number between 0 (inclusive), and 1 (exclusive):</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.random();     // returns a random number
+                            </pre>
+                            <a href="../examples/JSMath/example12.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math Properties (Constants)</h1>
+        <p>JavaScript provides 8 mathematical constants that can be accessed with the Math object:</p>
+        <div>
+            <p>Example:</p>
+                        <section>
+                            <pre>
+Math.E        // returns Euler's number
+Math.PI       // returns PI
+Math.SQRT2    // returns the square root of 2
+Math.SQRT1_2  // returns the square root of 1/2
+Math.LN2      // returns the natural logarithm of 2
+Math.LN10     // returns the natural logarithm of 10
+Math.LOG2E    // returns base 2 logarithm of E
+Math.LOG10E   // returns base 10 logarithm of E
+                            </pre>
+                            <a href="../examples/JSMath/example13.html" target="_blank"><button class="btn run">Run
+                                    Example</button></a>
+                        </section>
+        </div>
+    </div>
+    <div class="box">
+        <h1>Math Constructor</h1>
+        <p>Unlike other global objects, the Math object has no constructor. Methods and properties are static.</p>
+        <p>All methods and properties (constants) can be used without creating a Math object first.</p>
+    </div>
+    <div class="box">
+        <h1>Math Object Methods</h1>
+        <table rules="all" align="center" cellpadding="10" style="border-spacing:0px" bordercolor="black" >
+            <thead>
+                <th>Method</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>abs(x)</td>
+                <td>Returns the absolute value of x</td>
+            </tr>
+            <tr>
+                <td>acos(x)</td>
+                <td>Returns the arccosine of x, in radians</td>
+            </tr>
+            <tr>
+                <td>acosh(x)</td>
+                <td>Returns the hyperbolic arccosine of x</td>
+            </tr>
+            <tr>
+                <td>asin(x)</td>
+                <td>Returns the arcsine of x, in radians</td>
+            </tr>
+            <tr>
+                <td>asinh(x)</td>
+                <td>Returns the hyperbolic arcsine of x</td>
+            </tr>
+            <tr>
+                <td>atan(x)</td>
+                <td>Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians</td>
+            </tr>
+            <tr>
+                <td>atan2(y, x)</td>
+                <td>Returns the arctangent of the quotient of its arguments</td>
+            </tr>
+            <tr>
+                <td>atanh(x)</td>
+                <td>Returns the hyperbolic arctangent of x</td>
+            </tr>
+            <tr>
+                <td>cbrt(x)</td>
+                <td>Returns the cubic root of x</td>
+            </tr>
+            <tr>
+                <td>ceil(x)</td>
+                <td>Returns x, rounded upwards to the nearest integer</td>
+            </tr>
+            <tr>
+                <td>cos(x)</td>
+                <td>Returns the cosine of x (x is in radians)</td>
+            </tr>
+            <tr>
+                <td>cosh(x)</td>
+                <td>Returns the hyperbolic cosine of x</td>
+            </tr>
+            <tr>
+                <td>exp(x)</td>
+                <td>Returns the value of Ex</td>
+            </tr>
+            <tr>
+                <td>floor(x)</td>
+                <td>Returns x, rounded downwards to the nearest integer</td>
+            </tr>
+            <tr>
+                <td>log(x)</td>
+                <td>Returns the natural logarithm (base E) of x</td>
+            </tr>
+            <tr>
+                <td>max(x, y, z,<br> ..., n)</td>
+                <td>Returns the number with the highest value</td>
+            </tr>
+            <tr>
+                <td>min(x, y, z,<br> ..., n)</td>
+                <td>Returns the number with the lowest value</td>
+            </tr>
+            <tr>
+                <td>pow(x, y)</td>
+                <td>Returns the value of x to the power of y</td>
+            </tr>
+            <tr>
+                <td>random()</td>
+                <td>Returns a random number between 0 and 1</td>
+            </tr>
+            <tr>
+                <td>round(x)</td>
+                <td>Rounds x to the nearest integer</td>
+            </tr>
+            <tr>
+                <td>sin(x)</td>
+                <td>Returns the sine of x (x is in radians)</td>
+            </tr>
+            <tr>
+                <td>sinh(x)</td>
+                <td>Returns the hyperbolic sine of x</td>
+            </tr>
+            <tr>
+                <td>sqrt(x)</td>
+                <td>Returns the square root of x</td>
+            </tr>
+            <tr>
+                <td>tan(x)</td>
+                <td>Returns the tangent of an angle</td>
+            </tr>
+            <tr>
+                <td>tanh(x)</td>
+                <td>Returns the hyperbolic tangent of a number</td>
+            </tr>
+            <tr>
+                <td>trunc(x)</td>
+                <td>Returns the integer part of a number (x)</td>
+            </tr>
+            </tbody>
+        </table>    
+    </div>
+    </body>
+    </html>

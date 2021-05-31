@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main pages/style.css">
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <title>Quiz</title>
+    <style>
+        body {
+            background-color: rgb(219, 210, 210);
+        }
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        h1,h2,h3,p{
+            margin: 20px;
+        }
+        .box{
+            width: 90%;
+            margin: 0px auto;
+        }
+
+        #Hnav {
+            height: 32px;
+            width: 100%;
+            position: sticky;
+            top: 0px;
+            /* border: 2px solid; */
+            background-color: red;
+            z-index: 1;
+        }
+
+        #Hnav ul {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #Hnav ul li {
+            list-style: none;
+            padding: 0px 15px;
+        }
+
+        #Hnav ul li a {
+            font-family: 'Baloo Bhaina 2', cursive;
+            text-decoration: none;
+            padding: 2px 15px;
+            font-size: 25px;
+        }
+
+        #Hnav ul li a:hover {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1 style=" background-color: ivory; width: 40%; margin:0px auto;padding: 4px 8px;">JavaScript Quiz Test</h1> -->
+    <section id="Hnav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../Navigation/What's New/What's New.html">New Topics</a></li>
+            <li><a href="../Navigation/Assignments.html">Assignments</a></li>
+            <li><a href="#">Quizes</a></li>
+            <li><a href="../Navigation/Creators.html">Developers</a></li>
+            <li><a href="../Navigation/Contact Us.html">ContactUs</a></li>
+            <!-- <li><button onclick="manoj()"></button></li> -->
+        </ul>
+    </section>
+    <div class="box" style="background-color: aqua; margin: 5px auto;">
+        <p>You Can test your JavaScript Skills with our Quiz</p>
+        <h2>The Test</h2>
+        <ul>
+            <li>The test contains 15 questions and there is time limit.</li>
+            <li>The test is not official, it's just a nice way to see how much you know, or don't know, about
+                JavaScript.</li>
+        </ul>
+
+        <h2>Count Your Score</h2>
+        <p>You will get 1 point for each correct answer. At the end of the Quiz, your total score will be displayed.
+            Maximum score is 15 points.</p>
+
+        <section style="background-color: rgb(227, 233, 151);">
+            <h1>Start the Quiz</h1>
+            <h3>Good Luck!</h3>
+
+            <a href="./quiz.html" target="_blank"><button class="btn run"
+                    style="width: 170px; background-color: blueviolet;">Start the Quiz</button></a>
+        </section>
+    </div>
+
+</body>
+
+</html>

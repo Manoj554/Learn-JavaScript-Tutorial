@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JavaScript Forms</title>
+    <style>table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }</style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">JavaScript Forms</h1>
+    <div class="box">
+        <h2>JavaScript Form Validation</h2>
+        <p>HTML form validation can be done by JavaScript.</p>
+        <p>If a form field (fname) is empty, this function alerts a message, and returns false, to prevent the form from being submitted:</p>
+
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+                </pre>
+            </section>
+        </div>
+        <p>The function can be called when the form is submitted:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+&lt;form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post"&gt;
+Name: &lt;input type="text" name="fname"&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+                </pre>
+                <a href="../examples/JS Forms/1.html" target="_blank"><button class="btn run">Run
+                    Example</button></a>
+            </section>
+        </div>
+    </div>
+
+ 
+    <div class="box">
+        <h2>Automatic HTML Form Validation</h2>
+        <p>HTML form validation can be performed automatically by the browser:</p>
+        <p>If a form field (fname) is empty, the required attribute prevents this form from being submitted:</p>
+        <div>
+            <p>Example :- </p>
+            <section>
+                <pre>
+&lt;form action="/action_page.php" method="post"&gt;
+&lt;input type="text" name="fname" required&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+                </pre>
+                <a href="../examples/JS Forms/2.html" target="_blank"><button class="btn run">Run
+                        Example</button></a>
+            </section>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>Data Validation</h2>
+        <p>Data validation is the process of ensuring that user input is clean, correct, and useful.</p>
+        <p>Typical validation tasks are:</p>
+        <ul>
+            <li>
+                has the user filled in all required fields?
+            </li>
+            <li>
+                has the user entered a valid date?
+            </li>
+            <li>
+                has the user entered text in a numeric field?
+            </li>
+        </ul>
+        <p>Most often, the purpose of data validation is to ensure correct user input.</p>
+        <p>Validation can be defined by many different methods, and deployed in many different ways.</p>
+        <p>Server side validation is performed by a web server, after input has been sent to the server.</p>
+        <p>Client side validation is performed by a web browser, before input is sent to a web server.</p>
+    </div>
+
+    <div class="box">
+        <h2>HTML Constraint Validation</h2>
+        <p>HTML5 introduced a new HTML validation concept called constraint validation.</p>
+        <p>HTML constraint validation is based on:</p>
+        <ul type=>
+            <li>
+                Constraint validation HTML Input Attributes
+            </li>
+            <li>
+                Constraint validation CSS Pseudo Selectors
+            </li>
+            <li>
+                Constraint validation DOM Properties and Methods
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <h2>Constraint Validation HTML Input Attributes</h2>
+        <table>
+            <tr>
+              <th>Attribute</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>disabled</td>
+              <td>Specifies that the input element should be disabled</td>
+            </tr>
+            <tr>
+              <td>max</td>
+              <td>Specifies the maximum value of an input element</td>
+            </tr>
+            <tr>
+              <td>min</td>
+              <td>Specifies the minimum value of an input element</td>
+            </tr>
+            <tr>
+                <td>pattern</td>
+                <td>Specifies the value pattern of an input element</td>
+              </tr>
+              <tr>
+                <td>required</td>
+                <td>Specifies that the input field requires an element</td>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>Specifies the type of an input element</td>
+              </tr>
+          </table>
+    </div>
+
+    <div class="box">
+        <h2>Constraint Validation CSS Pseudo Selectors</h2>
+        <table>
+            <tr>
+              <th>Selector</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>:disabled</td>
+              <td>Selects input elements with the "disabled" attribute specified</td>
+            </tr>
+            <tr>
+              <td>:invalid</td>
+              <td>Selects input elements with invalid values</td>
+            </tr>
+            <tr>
+              <td>:optional</td>
+              <td>Selects input elements with no "required" attribute specified</td>
+            </tr>
+            <tr>
+                <td>:required</td>
+                <td>Selects input elements with the "required" attribute specified</td>
+              </tr>
+              <tr>
+                <td>:valid</td>
+                <td>Selects input elements with valid values</td>
+              </tr>
+          </table>
+    </div>
+  
+</body>
+
+</html>

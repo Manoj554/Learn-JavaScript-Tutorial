@@ -1,0 +1,192 @@
+<html>
+
+<head>
+  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./images/jslogo.jpg" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&family=Crimson+Text:ital@1&family=Montserrat&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Trirong&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    #header #box h1 {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    #header #box h3 {
+      font-size: 1rem;
+      color: wheat;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=tel],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=email],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+
+    input[type=button] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=button]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: aqua;
+      padding: 20px;
+      margin-left: 150px;
+      margin-right: 150px;
+    }
+
+    h1 {
+      text-align: initial;
+      margin-left: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <section id="header">
+    <img src="../images/jslogo.jpg" alt="NotFound">
+    <div id="box">
+      <h1>JavaScript Tutorial</h1>
+      <h3>The Language for Web</h3>
+    </div> -->
+  <!-- </section> -->
+  <section id="Hnav">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="./What's New/What's New.html">New Topics</a></li>
+      <li><a href="./Assignments.html">Assignments</a></li>
+      <li><a href="../Quizes/index.html">Quizes</a></li>
+      <li><a href="./Creators.html">Developers</a></li>
+      <li><a href="./Contact Us.html">ContactUs</a></li>
+      <!-- <li><a href="#" onclick="Quiz()">Quizes</a></li> -->
+      <!-- <li><button onclick="manoj()"></button></li> -->
+    </ul>
+  </section>
+
+  <h1> Contact Us</h1>
+
+  <div class="container">
+    <form action="/action_page.php">
+      <label for="fname">Name</label>
+      <input type="text" id="fname" name="name" placeholder="Your name.." required=''>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender">
+        <option value="select">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <label for="tel">Contact Number</label>
+      <input type="tel" id="tel" name="contactNumber" placeholder="Contact Number..">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Email Address..">
+
+      <label for="topic">Topic</label>
+      <select id="topic" name="topic">
+        <option value="select">Select</option>
+        <option value="home">Home</option>
+        <option value="introduction">Introduction</option>
+        <option value="statements">Statements</option>
+        <option value="comments">Comments</option>
+        <option value="variables">Variable</option>
+        <option value="operators">Operators</option>
+        <option value="forms">Forms</option>
+        <option value="functions">Functions</option>
+        <option value="objects">Objects</option>
+        <option value="events">Events</option>
+        <option value="strings">Strings</option>
+        <option value="numbers">Numbers</option>
+        <option value="arrays">Arrays</option>
+        <option value="date">Date</option>
+        <option value="math">Math</option>
+        <option value="random">Random</option>
+        <option value="loops">Loops</option>
+        <option value="regxp">Regxp</option>
+        <option value="errors">Errors</option>
+        <option value="this">This</option>
+        <option value="let">Let</option>
+        <option value="const">Const</option>
+        <option value="classes">Classes</option>
+        <option value="debugging">Debugging</option>
+        <option value="htmlDom">Html Dom</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="subject">Details of your Query</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <input type="button" value="Submit" onclick="Submit()">
+    </form>
+
+  </div>
+  <script>
+    function Submit() {
+      alert('Your Response is recorded\n\n Thank you !!!!');
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+
+</html>
